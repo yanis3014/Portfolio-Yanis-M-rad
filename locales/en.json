@@ -1,0 +1,125 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I’m",
+    "intro": "20 years old, student passionate about modern web development.",
+    "description": "Currently in my 2nd year of integrated prep at Polytech Nice Sophia Antipolis, I specialize in creating performant and elegant web applications with Next.js, TypeScript, and Tailwind CSS.",
+    "cta": {
+      "projects": "See my projects",
+      "contact": "Get in touch"
+    }
+  },
+  "skills": {
+    "title": "Skills",
+    "frontend": "Front-end",
+    "backend": "Back-end",
+    "tools": "Tools"
+  },
+  "recentProjects": {
+    "title": "Recent work",
+    "subtitle": "Discover two recent web projects built with Next.js, TypeScript, and Tailwind CSS.",
+    "all": "See all projects"
+  },
+  "testimonials": {
+    "title": "What people say",
+    "subtitle": "A few testimonials from recent collaborations."
+  },
+  "blog": {
+    "title": "News & articles",
+    "subtitle": "Some writings about web development, tools I use, and my discoveries.",
+    "readMore": "Read more",
+    "all": "See all articles"
+  },
+  "cta": {
+    "title": "Ready to collaborate?",
+    "subtitle": "I’m open for freelance work, internships, and exciting projects. Let’s talk about your idea!",
+    "contact": "Get in touch",
+    "projects": "See my projects"
+  },
+  "about": {
+    "title": "About me",
+    "intro": "I’m {name}, 20 years old, student passionate about modern web development.",
+    "presentation": "Currently in my 2nd year of integrated prep at Polytech Nice Sophia Antipolis, I specialize in creating performant and elegant web applications with Next.js, TypeScript, and Tailwind CSS.",
+    "passion": "I love crafting clean interfaces, optimizing performance, and exploring accessibility best practices. Always eager to learn, I aim to grow in front‑end architecture and contribute to open source.",
+    "journey": "My journey",
+    "skills": "Technical skills",
+    "objectives": "My goals",
+    "goal1": "Become a full‑stack developer specialized in React/Next.js.",
+    "goal2": "Contribute to open source projects.",
+    "goal3": "Master web accessibility and performance.",
+    "goal4": "Get an internship to apply my skills.",
+    "contact": "Let’s talk?",
+    "contactSubtitle": "I’m open to internships, freelance projects, or collaborations.",
+    "contactBtn": "Get in touch",
+    "timeline": {
+      "2024": {
+        "title": "2nd year Integrated Prep",
+        "description": "Deepening computer science, modern web projects."
+      },
+      "2023": {
+        "title": "1st year Integrated Prep",
+        "description": "Basics in algorithms, data structures, programming."
+      },
+      "2022": {
+        "title": "French Baccalaureate S",
+        "school": "High school —",
+        "description": "Mathematics specialization, honors."
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Have an idea, a project, or just want to chat? Feel free to send me a message.",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "send": "Send",
+      "success": "Thanks! I’ll get back to you soon."
+    },
+    "info": {
+      "title": "Let’s stay in touch",
+      "email": "Email",
+      "location": "Location"
+    },
+    "social": "Social",
+    "availability": "Availability: open for internships, freelance missions, and collaborations."
+  },
+  "project": {
+    "back": "Back to projects",
+    "technologies": "Technologies",
+    "gallery": "Screenshots",
+    "about": "About the project",
+    "description": "This project was built as an advanced practice of modern web technologies. The main goal was to create a smooth, performant user experience while following accessibility and SEO best practices.",
+    "details": "Special attention was paid to code structure, component reusability, and maintainability. The project also includes optimizations to ensure fast load times, even on modest connections.",
+    "conclusion": "Feel free to explore the source code for technical insights or try the live demo to see the final result.",
+    "source": "Source code",
+    "demo": "View demo",
+    "previous": "Previous image",
+    "next": "Next image"
+  },
+  "stats": {
+    "projects": "Projects"
+  },
+  "search": {
+    "placeholder": "Search a project, a tech...",
+    "noResults": "No projects found for this search."
+  },
+  "sort": {
+    "recent": "Recent",
+    "name": "Name"
+  },
+  "view": {
+    "grid": "Grid view",
+    "list": "List view"
+  },
+  "footer": {
+    "made": "Made with ❤️ by Yanis M'rad",
+    "lang": "Language"
+  }
+}

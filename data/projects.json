@@ -1,0 +1,31 @@
+[
+  {
+    "slug": "website-1",
+    "title": "Website 1 — Showcase",
+    "description": "Refonte visuelle responsive avec mise en avant des sections clés et optimisation des performances.",
+    "technologies": ["Next.js", "TypeScript", "Tailwind"],
+    "image": "/images/website1/first.png",
+    "images": [
+      "/images/website1/first.png",
+      "/images/website1/second.png",
+      "/images/website1/third.png"
+    ],
+    "github": "",
+    "demo": ""
+  },
+  {
+    "slug": "website-2",
+    "title": "Website 2 — Landing Page",
+    "description": "Landing moderne avec animations légères, structure SEO-friendly et design system cohérent.",
+    "technologies": ["Next.js", "TypeScript", "Tailwind"],
+    "image": "/images/website2/first.png",
+    "images": [
+      "/images/website2/first.png",
+      "/images/website2/second.png",
+      "/images/website2/third.png",
+      "/images/website2/fourth.png"
+    ],
+    "github": "",
+    "demo": ""
+  }
+]

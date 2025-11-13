@@ -1,0 +1,125 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "projects": "Projets",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Bonjour, je suis",
+    "intro": "20 ans, étudiant passionné par le développement web moderne.",
+    "description": "Actuellement en 2ᵉ année de prépa intégrée à Polytech Nice Sophia Antipolis, je me spécialise dans la création d’applications web performantes et élégantes avec Next.js, TypeScript et Tailwind CSS.",
+    "cta": {
+      "projects": "Voir mes projets",
+      "contact": "Me contacter"
+    }
+  },
+  "skills": {
+    "title": "Compétences",
+    "frontend": "Front-end",
+    "backend": "Back-end",
+    "tools": "Outils"
+  },
+  "recentProjects": {
+    "title": "Mes réalisations récentes",
+    "subtitle": "Découvrez deux projets web récents, conçus avec Next.js, TypeScript et Tailwind CSS.",
+    "all": "Voir tous les projets"
+  },
+  "testimonials": {
+    "title": "Ce qu’on dit de mon travail",
+    "subtitle": "Quelques retours de collaborations récentes."
+  },
+  "blog": {
+    "title": "Actualités & articles",
+    "subtitle": "Quelques écrits sur le développement web, les outils que j’utilise et mes découvertes.",
+    "readMore": "Lire la suite",
+    "all": "Voir tous les articles"
+  },
+  "cta": {
+    "title": "Prêt à collaborer ?",
+    "subtitle": "Je suis ouvert aux missions freelance, stages et projets passionnants. Discutons de votre idée !",
+    "contact": "Me contacter",
+    "projects": "Voir mes projets"
+  },
+  "about": {
+    "title": "À propos de moi",
+    "intro": "Je m’appelle {name}, 20 ans, étudiant passionné par le développement web moderne.",
+    "presentation": "Actuellement en 2ᵉ année de prépa intégrée à Polytech Nice Sophia Antipolis, je me spécialise dans la création d’applications web performantes et élégantes avec Next.js, TypeScript et Tailwind CSS.",
+    "passion": "J’aime concevoir des interfaces soignées, optimiser les performances et explorer les bonnes pratiques d’accessibilité. Toujours curieux d’apprendre, je cherche à progresser en architecture front-end et à contribuer à des projets open source.",
+    "journey": "Mon parcours",
+    "skills": "Compétences techniques",
+    "objectives": "Mes objectifs",
+    "goal1": "Devenir développeur full‑stack spécialisé React/Next.js.",
+    "goal2": "Contribuer à des projets open source.",
+    "goal3": "Maîtriser l’accessibilité et les performances web.",
+    "goal4": "Obtenir un stage en entreprise pour appliquer mes compétences.",
+    "contact": "On discute ?",
+    "contactSubtitle": "Je suis ouvert aux opportunités de stages, projets freelance ou collaborations.",
+    "contactBtn": "Me contacter",
+    "timeline": {
+      "2024": {
+        "title": "2ᵉ année Prépa Intégrée",
+        "description": "Approfondissement en informatique, projets web modernes."
+      },
+      "2023": {
+        "title": "1ʳᵉ année Prépa Intégrée",
+        "description": "Bases en algorithmique, structures de données, programmation."
+      },
+      "2022": {
+        "title": "Baccalauréat S",
+        "school": "Lycée —",
+        "description": "Spécialité Mathématiques, mention Bien."
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Une idée, un projet, ou simplement envie d’échanger ? N’hésitez pas à m’envoyer un message.",
+    "form": {
+      "name": "Nom",
+      "email": "Email",
+      "message": "Message",
+      "send": "Envoyer",
+      "success": "Merci ! Je reviens vers vous au plus vite."
+    },
+    "info": {
+      "title": "Restons en contact",
+      "email": "Email",
+      "location": "Localisation"
+    },
+    "social": "Réseaux",
+    "availability": "Disponibilité : ouvert aux stages, missions freelance et collaborations."
+  },
+  "project": {
+    "back": "Retour aux projets",
+    "technologies": "Technologies",
+    "gallery": "Captures d’écran",
+    "about": "À propos du projet",
+    "description": "Ce projet a été développé dans le cadre d’une mise en pratique avancée des technologies modernes du web. L’objectif principal était de créer une expérience utilisateur fluide et performante tout en respectant les bonnes pratiques d’accessibilité et de référencement.",
+    "details": "Une attention particulière a été portée à la structure du code, à la réutilisabilité des composants et à la maintenabilité de l’application. Le projet intègre également des optimisations pour garantir des temps de chargement rapides, même sur des connexions modestes.",
+    "conclusion": "N’hésitez pas à explorer le code source pour découvrir les détails techniques ou à tester la démo en ligne pour vous faire une idée concrète du résultat final.",
+    "source": "Code source",
+    "demo": "Voir la démo",
+    "previous": "Image précédente",
+    "next": "Image suivante"
+  },
+  "stats": {
+    "projects": "Projets"
+  },
+  "search": {
+    "placeholder": "Rechercher un projet, une techno...",
+    "noResults": "Aucun projet trouvé pour cette recherche."
+  },
+  "sort": {
+    "recent": "Récents",
+    "name": "Nom"
+  },
+  "view": {
+    "grid": "Vue grille",
+    "list": "Vue liste"
+  },
+  "footer": {
+    "made": "Fait avec ❤️ par Yanis M'rad",
+    "lang": "Langue"
+  }
+}
