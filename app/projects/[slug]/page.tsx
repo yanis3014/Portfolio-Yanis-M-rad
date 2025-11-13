@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { ArrowLeft, Github, ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowLeft, Github, ExternalLink, ChevronLeft, ChevronRight, Expand, X } from 'lucide-react';
 import { useState } from 'react';
 import projects from '@/data/projects.json';
 import { useLocale } from '@/contexts/LocaleContext';
@@ -34,6 +34,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
 
   const gallery = project.images?.length ? project.images : [project.image];
   const [idx, setIdx] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const prev = () => setIdx((i) => (i - 1 + gallery.length) % gallery.length);
   const next = () => setIdx((i) => (i + 1) % gallery.length);
@@ -69,15 +70,15 @@ export default function ProjectPage({ params }: ProjectPageProps) {
           ))}
         </div>
 
-        <div className="flex gap-4">
+        <div className="flex flex-wrap gap-4">
           {project.github && (
             <a
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm hover:text-accent transition-colors text-text dark:text-text-dark"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-card dark:bg-card-dark border border-primary/20 rounded-lg hover:bg-accent hover:text-secondary hover:border-accent transition-all duration-200 text-sm font-medium shadow-sm"
             >
-              <Github size={16} />
+              <Github size={18} />
               {t('project.source')}
             </a>
           )}
@@ -86,9 +87,9 @@ export default function ProjectPage({ params }: ProjectPageProps) {
               href={project.demo}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm hover:text-accent transition-colors text-text dark:text-text-dark"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-accent text-secondary border border-accent rounded-lg hover:bg-accent/90 hover:shadow-lg transition-all duration-200 text-sm font-medium"
             >
-              <ExternalLink size={16} />
+              <ExternalLink size={18} />
               {t('project.demo')}
             </a>
           )}
@@ -108,7 +109,8 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.4 }}
-            className="relative w-full h-96 md:h-[32rem] rounded-xl overflow-hidden border border-primary/20 bg-card dark:bg-card-dark shadow-lg"
+            className="relative w-full h-96 md:h-[32rem] rounded-xl overflow-hidden border border-primary/20 bg-card dark:bg-card-dark shadow-lg group cursor-pointer"
+            onClick={() => setIsModalOpen(true)}
           >
             <Image
               src={gallery[idx]}
@@ -118,32 +120,48 @@ export default function ProjectPage({ params }: ProjectPageProps) {
               className="object-cover"
               priority
             />
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileHover={{ opacity: 1, scale: 1 }}
+                className="opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              >
+                <div className="bg-white/90 dark:bg-black/90 p-3 rounded-full shadow-lg">
+                  <Expand size={24} className="text-text dark:text-text-dark" />
+                </div>
+              </motion.div>
+            </div>
           </motion.div>
           {gallery.length > 1 && (
             <>
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={prev}
-                className="absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-card/80 dark:bg-card-dark/80 shadow-lg hover:bg-card dark:hover:bg-card-dark transition-colors"
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  prev();
+                }}
+                className="absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-card/80 dark:bg-card-dark/80 shadow-lg hover:bg-card dark:hover:bg-card-dark hover:scale-110 transition-all duration-200 z-10"
                 aria-label={t('project.previous')}
               >
                 <ChevronLeft size={20} className="text-text dark:text-text-dark" />
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={next}
-                className="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-card/80 dark:bg-card-dark/80 shadow-lg hover:bg-card dark:hover:bg-card-dark transition-colors"
+              </button>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  next();
+                }}
+                className="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-card/80 dark:bg-card-dark/80 shadow-lg hover:bg-card dark:hover:bg-card-dark hover:scale-110 transition-all duration-200 z-10"
                 aria-label={t('project.next')}
               >
                 <ChevronRight size={20} className="text-text dark:text-text-dark" />
-              </motion.button>
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+              </button>
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
                 {gallery.map((_, i) => (
                   <button
                     key={i}
-                    onClick={() => setIdx(i)}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setIdx(i);
+                    }}
                     className={`w-2 h-2 rounded-full transition-all ${
                       i === idx ? 'bg-accent w-6' : 'bg-muted'
                     }`}
@@ -164,11 +182,105 @@ export default function ProjectPage({ params }: ProjectPageProps) {
       >
         <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-text dark:text-text-dark">{t('project.about')}</h2>
         <div className="bg-card dark:bg-card-dark p-6 rounded-lg border border-primary/20">
-          <p className="text-text dark:text-text-dark mb-4">{t('project.description')}</p>
-          <p className="text-text dark:text-text-dark mb-4">{t('project.details')}</p>
-          <p className="text-text dark:text-text-dark">{t('project.conclusion')}</p>
+          {params.slug === 'pharmathon-monastir' ? (
+            <>
+              <p className="text-text dark:text-text-dark mb-4">{t('project.pharmathon.description')}</p>
+              <p className="text-text dark:text-text-dark mb-4">{t('project.pharmathon.details')}</p>
+              <p className="text-text dark:text-text-dark">{t('project.pharmathon.conclusion')}</p>
+            </>
+          ) : params.slug === 'forum-recherche-monastir' ? (
+            <>
+              <p className="text-text dark:text-text-dark mb-4">{t('project.forum.description')}</p>
+              <p className="text-text dark:text-text-dark mb-4">{t('project.forum.details')}</p>
+              <p className="text-text dark:text-text-dark">{t('project.forum.conclusion')}</p>
+            </>
+          ) : params.slug === 'dinary-payment-app' ? (
+            <>
+              <p className="text-text dark:text-text-dark mb-4">{t('project.dinary.description')}</p>
+              <p className="text-text dark:text-text-dark mb-4">{t('project.dinary.details')}</p>
+              <p className="text-text dark:text-text-dark">{t('project.dinary.conclusion')}</p>
+            </>
+          ) : (
+            <>
+              <p className="text-text dark:text-text-dark mb-4">{t('project.description')}</p>
+              <p className="text-text dark:text-text-dark mb-4">{t('project.details')}</p>
+              <p className="text-text dark:text-text-dark">{t('project.conclusion')}</p>
+            </>
+          )}
         </div>
       </motion.section>
+
+      {/* Modal d'agrandissement */}
+      {isModalOpen && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
+          onClick={() => setIsModalOpen(false)}
+        >
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.8, opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="relative max-w-7xl max-h-full w-full h-full flex items-center justify-center"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <Image
+              src={gallery[idx]}
+              alt={`${project.title} — capture ${idx + 1}`}
+              width={1200}
+              height={800}
+              className="max-w-full max-h-full object-contain rounded-lg"
+              priority
+            />
+            
+            {/* Bouton fermer */}
+            <button
+              onClick={() => setIsModalOpen(false)}
+              className="absolute top-6 right-6 p-3 rounded-full bg-black/60 hover:bg-black/80 hover:scale-110 transition-all duration-200 backdrop-blur-md border-2 border-white/50 shadow-2xl"
+              aria-label="Fermer"
+            >
+              <X size={28} className="text-white drop-shadow-lg" />
+            </button>
+
+            {/* Navigation dans la modal */}
+            {gallery.length > 1 && (
+              <>
+                <button
+                  onClick={prev}
+                  className="absolute left-6 top-1/2 -translate-y-1/2 p-4 rounded-full bg-black/60 hover:bg-black/80 hover:scale-110 transition-all duration-200 backdrop-blur-md border-2 border-white/50 shadow-2xl"
+                  aria-label={t('project.previous')}
+                >
+                  <ChevronLeft size={32} className="text-white drop-shadow-lg" />
+                </button>
+                <button
+                  onClick={next}
+                  className="absolute right-6 top-1/2 -translate-y-1/2 p-4 rounded-full bg-black/60 hover:bg-black/80 hover:scale-110 transition-all duration-200 backdrop-blur-md border-2 border-white/50 shadow-2xl"
+                  aria-label={t('project.next')}
+                >
+                  <ChevronRight size={32} className="text-white drop-shadow-lg" />
+                </button>
+                
+                {/* Indicateurs dans la modal */}
+                <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3 bg-black/50 px-4 py-2 rounded-full backdrop-blur-md border border-white/30">
+                  {gallery.map((_, i) => (
+                    <button
+                      key={i}
+                      onClick={() => setIdx(i)}
+                      className={`w-3 h-3 rounded-full transition-all border border-white/30 ${
+                        i === idx ? 'bg-white w-8 shadow-lg' : 'bg-white/60 hover:bg-white/80'
+                      }`}
+                      aria-label={`Go to image ${i + 1}`}
+                    />
+                  ))}
+                </div>
+              </>
+            )}
+          </motion.div>
+        </motion.div>
+      )}
     </main>
   );
 }

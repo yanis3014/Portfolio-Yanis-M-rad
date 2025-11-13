@@ -50,18 +50,30 @@ export default function ProjectCard({ project }: { project: Project }) {
               </span>
             ))}
           </div>
-          <div className="flex items-center gap-3 text-xs text-text/50 dark:text-text-dark/50">
+          <div className="flex items-center gap-2">
             {project.github && (
-              <span className="flex items-center gap-1">
-                <Github size={14} />
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="flex items-center gap-1 px-3 py-1.5 text-xs bg-card-dark/10 dark:bg-card/10 border border-primary/20 rounded-md hover:bg-accent hover:text-secondary hover:border-accent transition-all duration-200"
+              >
+                <Github size={12} />
                 Code
-              </span>
+              </a>
             )}
             {project.demo && (
-              <span className="flex items-center gap-1">
-                <ExternalLink size={14} />
+              <a
+                href={project.demo}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="flex items-center gap-1 px-3 py-1.5 text-xs bg-accent text-secondary border border-accent rounded-md hover:bg-accent/90 hover:shadow-md transition-all duration-200"
+              >
+                <ExternalLink size={12} />
                 Demo
-              </span>
+              </a>
             )}
           </div>
         </div>

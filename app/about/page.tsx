@@ -9,26 +9,40 @@ export default function AboutPage() {
   const { t } = useLocale();
 
   const skills = [
-    { name: 'Next.js', level: 90 },
-    { name: 'React', level: 85 },
-    { name: 'TypeScript', level: 80 },
-    { name: 'Tailwind CSS', level: 85 },
+    { name: 'Next.js', level: 70 },
+    { name: 'React', level: 65 },
+    { name: 'TypeScript', level: 60 },
+    { name: 'Tailwind CSS', level: 75 },
+    { name: 'Python', level: 70 },
     { name: 'Git', level: 75 },
-    { name: 'Node.js', level: 70 },
+    { name: 'Node.js', level: 60 },
+    { name: 'Java', level: 40 },
   ];
 
   const timeline = [
     {
-      year: '2024',
+      year: '2025',
       title: t('about.timeline.2024.title'),
       school: 'Polytech Nice Sophia Antipolis',
       description: t('about.timeline.2024.description'),
     },
     {
-      year: '2023',
+      year: '2025',
+      title: t('about.timeline.2024-stage.title'),
+      school: t('about.timeline.2024-stage.school'),
+      description: t('about.timeline.2024-stage.description'),
+    },
+    {
+      year: '2024',
       title: t('about.timeline.2023.title'),
       school: 'Polytech Nice Sophia Antipolis',
       description: t('about.timeline.2023.description'),
+    },
+    {
+      year: '2023',
+      title: t('about.timeline.2023-bac.title'),
+      school: t('about.timeline.2023-bac.school'),
+      description: t('about.timeline.2023-bac.description'),
     },
     {
       year: '2022',
@@ -64,12 +78,18 @@ export default function AboutPage() {
       >
         <div className="prose prose-gray dark:prose-invert max-w-none text-center">
           <p className="text-text dark:text-text-dark leading-relaxed">
-            Actuellement en 2ᵉ année de prépa intégrée à <strong className="text-accent">Polytech Nice Sophia Antipolis</strong>, je me spécialise dans la création d’applications web
-            performantes et élégantes avec <strong className="text-accent">Next.js</strong>, <strong className="text-accent">TypeScript</strong> et <strong className="text-accent">Tailwind CSS</strong>.
+            {t('about.presentation').split('Polytech Nice Sophia Antipolis').map((part, index) => (
+              index === 0 ? (
+                <span key={index}>
+                  {part}<strong className="text-accent">Polytech Nice Sophia Antipolis</strong>
+                </span>
+              ) : (
+                <span key={index}>{part}</span>
+              )
+            ))}
           </p>
           <p className="text-text dark:text-text-dark leading-relaxed mt-4">
-            J’aime concevoir des interfaces soignées, optimiser les performances et explorer les bonnes pratiques d’accessibilité.
-            Toujours curieux d’apprendre, je cherche à progresser en architecture front-end et à contribuer à des projets open source.
+            {t('about.passion')}
           </p>
         </div>
       </motion.section>
@@ -165,6 +185,8 @@ export default function AboutPage() {
             t('about.goal2'),
             t('about.goal3'),
             t('about.goal4'),
+            t('about.goal5'),
+            t('about.goal6'),
           ].map((goal, idx) => (
             <motion.div
               key={idx}

@@ -1,8 +1,8 @@
 [
   {
-    "slug": "website-1",
-    "title": "Website 1 — Showcase",
-    "description": "Refonte visuelle responsive avec mise en avant des sections clés et optimisation des performances.",
+    "slug": "pharmathon-monastir",
+    "title": "Pharmathon — Plateforme d'inscription",
+    "description": "Site d'inscription développé pour les 50 ans de la Faculté de Pharmacie de Monastir. Gestion des inscriptions marathon et marchaton avec interface admin complète.",
     "technologies": ["Next.js", "TypeScript", "Tailwind"],
     "image": "/images/website1/first.png",
     "images": [
@@ -10,13 +10,13 @@
       "/images/website1/second.png",
       "/images/website1/third.png"
     ],
-    "github": "",
-    "demo": ""
+    "github": "https://github.com/yanis3014/marathon-marchaton-pharmacy.git",
+    "demo": "https://marathon-marchaton-pharmacy.vercel.app/"
   },
   {
-    "slug": "website-2",
-    "title": "Website 2 — Landing Page",
-    "description": "Landing moderne avec animations légères, structure SEO-friendly et design system cohérent.",
+    "slug": "forum-recherche-monastir",
+    "title": "Forum de la Recherche — Plateforme événementielle",
+    "description": "Plateforme complète pour le Forum de la Recherche de la Faculté de Pharmacie de Monastir. Gestion d'événements, inscriptions payantes et interfaces multi-rôles.",
     "technologies": ["Next.js", "TypeScript", "Tailwind"],
     "image": "/images/website2/first.png",
     "images": [
@@ -25,7 +25,23 @@
       "/images/website2/third.png",
       "/images/website2/fourth.png"
     ],
-    "github": "",
-    "demo": ""
+    "github": "https://github.com/votre-username/forum-recherche-monastir",
+    "demo": "https://forum-recherche-monastir.vercel.app"
+  },
+  {
+    "slug": "dinary-payment-app",
+    "title": "Dinary — Application de Paiement Mobile",
+    "description": "Application de paiement mobile complète pour l'Algérie avec QR codes, géolocalisation des commerçants, système de récompenses et architecture multi-interfaces (Client, Commerçant, Admin).",
+    "technologies": ["React Native", "Node.js", "Express", "MongoDB", "Socket.io", "QR Code"],
+    "image": "/images/website3/first.png",
+    "images": [
+      "/images/website3/first.png",
+      "/images/website3/second.png",
+      "/images/website3/third.png",
+      "/images/website3/fourth.png",
+      "/images/website3/fifth.png"
+    ],
+    "github": "https://github.com/votre-username/dinary-payment-app",
+    "demo": "https://dinary-app.vercel.app"
   }
 ]

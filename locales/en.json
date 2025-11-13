@@ -43,32 +43,44 @@
   },
   "about": {
     "title": "About me",
-    "intro": "I’m {name}, 20 years old, student passionate about modern web development.",
-    "presentation": "Currently in my 2nd year of integrated prep at Polytech Nice Sophia Antipolis, I specialize in creating performant and elegant web applications with Next.js, TypeScript, and Tailwind CSS.",
-    "passion": "I love crafting clean interfaces, optimizing performance, and exploring accessibility best practices. Always eager to learn, I aim to grow in front‑end architecture and contribute to open source.",
+    "intro": "I’m {name}, 20 years old, student passionate about computer science.",
+    "presentation": "Currently in my 2nd year of integrated prep at Polytech Nice Sophia Antipolis, I develop my computer science skills with a focus on programming, algorithms, and new technologies.",
+    "passion": "Passionate about solving complex problems and technological innovation. I particularly enjoy the creative aspect of programming and the satisfaction of creating elegant and efficient solutions.",
     "journey": "My journey",
     "skills": "Technical skills",
     "objectives": "My goals",
-    "goal1": "Become a full‑stack developer specialized in React/Next.js.",
-    "goal2": "Contribute to open source projects.",
-    "goal3": "Master web accessibility and performance.",
-    "goal4": "Get an internship to apply my skills.",
+    "goal1": "Create innovative web applications that positively impact users' lives.",
+    "goal2": "Find an apprenticeship to deepen my skills in a company.",
+    "goal3": "Specialize in the field of Artificial Intelligence.",
+    "goal4": "Improve my development skills by working for individuals and companies.",
+    "goal5": "Contribute to open source projects.",
+    "goal6": "Master web accessibility and performance.",
     "contact": "Let’s talk?",
-    "contactSubtitle": "I’m open to internships, freelance projects, or collaborations.",
+    "contactSubtitle": "I'm open to apprenticeships, internships, freelance projects, or collaborations.",
     "contactBtn": "Get in touch",
     "timeline": {
       "2024": {
         "title": "2nd year Integrated Prep",
         "description": "Deepening computer science, modern web projects."
       },
+      "2024-stage": {
+        "title": "I3S Laboratory Internship",
+        "school": "CNRS - Sophia Antipolis",
+        "description": "One-month internship at I3S laboratory affiliated with CNRS. Research project on nonograms and constraint programming."
+      },
       "2023": {
         "title": "1st year Integrated Prep",
         "description": "Basics in algorithms, data structures, programming."
       },
+      "2023-bac": {
+        "title": "Tunisian Baccalaureate S",
+        "school": "Tunisia",
+        "description": "Science Baccalaureate, honors."
+      },
       "2022": {
-        "title": "French Baccalaureate S",
-        "school": "High school —",
-        "description": "Mathematics specialization, honors."
+        "title": "French General Baccalaureate",
+        "school": "France",
+        "description": "Mathematics/Physics-Chemistry specializations, high honors."
       }
     }
   },
@@ -95,13 +107,28 @@
     "technologies": "Technologies",
     "gallery": "Screenshots",
     "about": "About the project",
-    "description": "This project was built as an advanced practice of modern web technologies. The main goal was to create a smooth, performant user experience while following accessibility and SEO best practices.",
-    "details": "Special attention was paid to code structure, component reusability, and maintainability. The project also includes optimizations to ensure fast load times, even on modest connections.",
-    "conclusion": "Feel free to explore the source code for technical insights or try the live demo to see the final result.",
+    "description": "This project was specifically developed to celebrate the 50th anniversary of the Faculty of Pharmacy of Monastir. It is a complete registration platform for the marathon and marchaton organized as part of this anniversary.",
+    "details": "The site integrates a user registration system with data validation, participant management and administration interface to retrieve all registered users' information. Particular attention was paid to user experience and data security.",
+    "conclusion": "This platform efficiently centralized event registrations while providing organizers with a complete and intuitive management tool.",
     "source": "Source code",
     "demo": "View demo",
     "previous": "Previous image",
-    "next": "Next image"
+    "next": "Next image",
+    "pharmathon": {
+      "description": "This project was specifically developed to celebrate the 50th anniversary of the Faculty of Pharmacy of Monastir. It is a complete registration platform for the marathon and marchaton organized as part of this anniversary.",
+      "details": "The site integrates a user registration system with data validation, participant management and administration interface to retrieve all registered users' information. Particular attention was paid to user experience and data security.",
+      "conclusion": "This platform efficiently centralized event registrations while providing organizers with a complete and intuitive management tool."
+    },
+    "forum": {
+      "description": "Event platform developed for the Research Forum of the Faculty of Pharmacy of Monastir. The system enables complete management of scientific events with paid registrations and participant tracking.",
+      "details": "The application integrates three distinct interfaces: an admin interface to manage users and add events to the calendar, a participant interface to register and make payments, and a speaker interface to view attendance statistics and manage their sessions.",
+      "conclusion": "This comprehensive solution facilitated forum organization by automating registration and payment management while providing real-time tracking tools for all event stakeholders."
+    },
+    "dinary": {
+      "description": "Revolutionary mobile payment application developed for the Algerian market. Dinary offers a complete QR code payment solution with sophisticated architecture featuring three distinct interfaces: Client, Merchant, and Administrator.",
+      "details": "The application integrates a robust backend entirely developed with advanced features: secure authentication system, merchant geolocation on interactive map, referral system, multi-level rewards program, and real-time transaction management. The admin interface provides total control with identity verification tools, merchant moderation, and detailed analytics.",
+      "conclusion": "This ambitious project demonstrates complete full-stack development mastery with particular attention to financial transaction security and user experience in the context of Algeria's mobile payment market."
+    }
   },
   "stats": {
     "projects": "Projects"

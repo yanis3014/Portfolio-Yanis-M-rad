@@ -43,32 +43,44 @@
   },
   "about": {
     "title": "À propos de moi",
-    "intro": "Je m’appelle {name}, 20 ans, étudiant passionné par le développement web moderne.",
-    "presentation": "Actuellement en 2ᵉ année de prépa intégrée à Polytech Nice Sophia Antipolis, je me spécialise dans la création d’applications web performantes et élégantes avec Next.js, TypeScript et Tailwind CSS.",
-    "passion": "J’aime concevoir des interfaces soignées, optimiser les performances et explorer les bonnes pratiques d’accessibilité. Toujours curieux d’apprendre, je cherche à progresser en architecture front-end et à contribuer à des projets open source.",
+    "intro": "Je m’appelle {name}, 20 ans, étudiant passionné par le domaine de l'informatique.",
+    "presentation": "Actuellement en 2ᵉ année de prépa intégrée à Polytech Nice Sophia Antipolis, je développe mes compétences en informatique avec un focus sur la programmation, l'algorithmique et les nouvelles technologies.",
+    "passion": "Passionné par la résolution de problèmes complexes et l'innovation technologique. J'apprécie particulièrement l'aspect créatif de la programmation et la satisfaction de créer des solutions élégantes et efficaces.",
     "journey": "Mon parcours",
     "skills": "Compétences techniques",
     "objectives": "Mes objectifs",
-    "goal1": "Devenir développeur full‑stack spécialisé React/Next.js.",
-    "goal2": "Contribuer à des projets open source.",
-    "goal3": "Maîtriser l’accessibilité et les performances web.",
-    "goal4": "Obtenir un stage en entreprise pour appliquer mes compétences.",
+    "goal1": "Créer des applications web innovantes qui impactent positivement la vie des utilisateurs.",
+    "goal2": "Trouver une alternance pour approfondir mes compétences en entreprise.",
+    "goal3": "Me spécialiser dans le domaine de l'Intelligence Artificielle.",
+    "goal4": "Améliorer mes compétences en développement en travaillant pour des particuliers et entreprises.",
+    "goal5": "Contribuer à des projets open source.",
+    "goal6": "Maîtriser l'accessibilité et les performances web.",
     "contact": "On discute ?",
-    "contactSubtitle": "Je suis ouvert aux opportunités de stages, projets freelance ou collaborations.",
+    "contactSubtitle": "Je suis ouvert aux opportunités d'alternance, stages, projets freelance ou collaborations.",
     "contactBtn": "Me contacter",
     "timeline": {
       "2024": {
         "title": "2ᵉ année Prépa Intégrée",
         "description": "Approfondissement en informatique, projets web modernes."
       },
+      "2024-stage": {
+        "title": "Stage Laboratoire I3S",
+        "school": "CNRS - Sophia Antipolis",
+        "description": "Stage d'un mois au laboratoire I3S rattaché au CNRS. Projet de recherche sur les nonogrammes et la programmation par contraintes."
+      },
       "2023": {
         "title": "1ʳᵉ année Prépa Intégrée",
         "description": "Bases en algorithmique, structures de données, programmation."
       },
+      "2023-bac": {
+        "title": "Baccalauréat Tunisien S",
+        "school": "Tunisie",
+        "description": "Baccalauréat Sciences, mention Bien."
+      },
       "2022": {
-        "title": "Baccalauréat S",
-        "school": "Lycée —",
-        "description": "Spécialité Mathématiques, mention Bien."
+        "title": "Baccalauréat Général",
+        "school": "France",
+        "description": "Spécialités Mathématiques/Physique-Chimie, mention Très Bien."
       }
     }
   },
@@ -95,13 +107,28 @@
     "technologies": "Technologies",
     "gallery": "Captures d’écran",
     "about": "À propos du projet",
-    "description": "Ce projet a été développé dans le cadre d’une mise en pratique avancée des technologies modernes du web. L’objectif principal était de créer une expérience utilisateur fluide et performante tout en respectant les bonnes pratiques d’accessibilité et de référencement.",
-    "details": "Une attention particulière a été portée à la structure du code, à la réutilisabilité des composants et à la maintenabilité de l’application. Le projet intègre également des optimisations pour garantir des temps de chargement rapides, même sur des connexions modestes.",
-    "conclusion": "N’hésitez pas à explorer le code source pour découvrir les détails techniques ou à tester la démo en ligne pour vous faire une idée concrète du résultat final.",
+    "description": "Ce projet a été développé spécialement pour célébrer les 50 ans de la Faculté de Pharmacie de Monastir. Il s'agit d'une plateforme d'inscription complète pour le marathon et le marchaton organisés dans le cadre de cet anniversaire.",
+    "details": "Le site intègre un système d'inscription utilisateur avec validation des données, gestion des participants et interface d'administration pour récupérer toutes les informations des inscrits. Une attention particulière a été portée à l'expérience utilisateur et à la sécurité des données.",
+    "conclusion": "Cette plateforme a permis de centraliser efficacement les inscriptions pour l'événement tout en offrant aux organisateurs un outil de gestion complet et intuitif.",
     "source": "Code source",
     "demo": "Voir la démo",
     "previous": "Image précédente",
-    "next": "Image suivante"
+    "next": "Image suivante",
+    "pharmathon": {
+      "description": "Ce projet a été développé spécialement pour célébrer les 50 ans de la Faculté de Pharmacie de Monastir. Il s'agit d'une plateforme d'inscription complète pour le marathon et le marchaton organisés dans le cadre de cet anniversaire.",
+      "details": "Le site intègre un système d'inscription utilisateur avec validation des données, gestion des participants et interface d'administration pour récupérer toutes les informations des inscrits. Une attention particulière a été portée à l'expérience utilisateur et à la sécurité des données.",
+      "conclusion": "Cette plateforme a permis de centraliser efficacement les inscriptions pour l'événement tout en offrant aux organisateurs un outil de gestion complet et intuitif."
+    },
+    "forum": {
+      "description": "Plateforme événementielle développée pour le Forum de la Recherche de la Faculté de Pharmacie de Monastir. Le système permet la gestion complète d'événements scientifiques avec inscriptions payantes et suivi des participants.",
+      "details": "L'application intègre trois interfaces distinctes : une interface admin pour gérer les utilisateurs et ajouter les événements au calendrier, une interface participant pour s'inscrire et effectuer les paiements, et une interface conférencier pour consulter les statistiques de présence et gérer leurs sessions.",
+      "conclusion": "Cette solution complète a facilité l'organisation du forum en automatisant la gestion des inscriptions, des paiements et en fournissant des outils de suivi en temps réel pour tous les acteurs de l'événement."
+    },
+    "dinary": {
+      "description": "Application de paiement mobile révolutionnaire développée pour le marché algérien. Dinary propose une solution complète de paiement par QR code avec une architecture sophistiquée comprenant trois interfaces distinctes : Client, Commerçant et Administrateur.",
+      "details": "L'application intègre un backend robuste entièrement développé avec des fonctionnalités avancées : système d'authentification sécurisé, géolocalisation des commerçants sur carte interactive, système de parrainage, programme de récompenses multi-niveaux, et gestion des transactions en temps réel. L'interface administrateur offre un contrôle total avec des outils de vérification d'identité, modération des commerçants, et analytics détaillées.",
+      "conclusion": "Ce projet ambitieux démontre une maîtrise complète du développement full-stack avec une attention particulière à la sécurité des transactions financières et à l'expérience utilisateur dans le contexte du marché des paiements mobiles en Algérie."
+    }
   },
   "stats": {
     "projects": "Projets"
