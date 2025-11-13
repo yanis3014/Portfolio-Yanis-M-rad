@@ -7,8 +7,8 @@
   },
   "hero": {
     "greeting": "Bonjour, je suis",
-    "intro": "20 ans, étudiant passionné par le développement web moderne.",
-    "description": "Actuellement en 2ᵉ année de prépa intégrée à Polytech Nice Sophia Antipolis, je me spécialise dans la création d’applications web performantes et élégantes avec Next.js, TypeScript et Tailwind CSS.",
+    "intro": "20 ans, étudiant passionné par l'informatique et l'innovation technologique.",
+    "description": "Actuellement en 2ᵉ année de prépa intégrée à Polytech Nice Sophia Antipolis, je développe mes compétences en informatique avec un focus sur la programmation, les algorithmes et l'innovation technologique.",
     "cta": {
       "projects": "Voir mes projets",
       "contact": "Me contacter"
@@ -127,7 +127,25 @@
     "dinary": {
       "description": "Application de paiement mobile révolutionnaire développée pour le marché algérien. Dinary propose une solution complète de paiement par QR code avec une architecture sophistiquée comprenant trois interfaces distinctes : Client, Commerçant et Administrateur.",
       "details": "L'application intègre un backend robuste entièrement développé avec des fonctionnalités avancées : système d'authentification sécurisé, géolocalisation des commerçants sur carte interactive, système de parrainage, programme de récompenses multi-niveaux, et gestion des transactions en temps réel. L'interface administrateur offre un contrôle total avec des outils de vérification d'identité, modération des commerçants, et analytics détaillées.",
-      "conclusion": "Ce projet ambitieux démontre une maîtrise complète du développement full-stack avec une attention particulière à la sécurité des transactions financières et à l'expérience utilisateur dans le contexte du marché des paiements mobiles en Algérie."
+      "conclusion": "Ce projet ambitieux démontre une maîtrise complète du développement full-stack avec une attention particulière à la sécurité des transactions financières et à l'expérience utilisateur dans le contexte du marché des paiements mobiles en Algérie.",
+      "sections": {
+        "login": {
+          "title": "Authentification & Inscription",
+          "description": "Système d'authentification sécurisé avec inscription utilisateur, validation des données et gestion des sessions. Interface intuitive pour l'accès aux différents types de comptes."
+        },
+        "client": {
+          "title": "Interface Client",
+          "description": "Application mobile complète pour les utilisateurs finaux avec paiement par QR code, géolocalisation des commerçants, système de récompenses et gestion du profil personnel."
+        },
+        "merchant": {
+          "title": "Interface Commerçant",
+          "description": "Tableau de bord professionnel pour les commerçants avec génération de QR codes, suivi des transactions, analytics des ventes et gestion du profil commercial."
+        },
+        "admin": {
+          "title": "Interface Administrateur",
+          "description": "Panel d'administration complet avec gestion des utilisateurs, modération des commerçants, vérification d'identité, analytics avancées et contrôle total de la plateforme."
+        }
+      }
     }
   },
   "stats": {

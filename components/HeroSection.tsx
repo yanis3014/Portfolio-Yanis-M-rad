@@ -9,7 +9,7 @@ export default function HeroSection() {
   const { t } = useLocale();
 
   return (
-    <section className="relative flex items-center justify-center py-48 mt-14 overflow-hidden">
+    <section className="relative h-[80vh] mt-14 overflow-hidden flex items-end justify-center">
       {/* Background hero image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -25,14 +25,14 @@ export default function HeroSection() {
       </div>
 
       {/* Text content over background */}
-      <div className="relative z-10 text-right max-w-2xl ml-auto mr-4 px-4 mt-0">
+      <div className="relative z-10 text-right max-w-2xl ml-auto mr-4 px-4 mb-8">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="text-4xl md:text-5xl font-bold mb-4 text-secondary drop-shadow-lg"
         >
-          {t('hero.greeting')} <span className="text-accent">Yanis M'rad</span>
+          {t('hero.greeting')} <span className="text-blue-900">Yanis M'rad</span>
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 20 }}

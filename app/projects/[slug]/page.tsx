@@ -7,7 +7,13 @@ import { notFound } from 'next/navigation';
 import { ArrowLeft, Github, ExternalLink, ChevronLeft, ChevronRight, Expand, X } from 'lucide-react';
 import { useState } from 'react';
 import projects from '@/data/projects.json';
+import SectionCarousel from '@/components/SectionCarousel';
 import { useLocale } from '@/contexts/LocaleContext';
+
+interface ImageSection {
+  title: string;
+  images: string[];
+}
 
 interface Project {
   title: string;
@@ -15,9 +21,10 @@ interface Project {
   technologies: string[];
   image: string;
   images?: string[];
+  imagesSections?: Record<string, ImageSection>;
   github?: string;
   demo?: string;
-  slug?: string;
+  slug: string;
 }
 
 interface ProjectPageProps {
@@ -35,6 +42,8 @@ export default function ProjectPage({ params }: ProjectPageProps) {
   const gallery = project.images?.length ? project.images : [project.image];
   const [idx, setIdx] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentSection, setCurrentSection] = useState<string>('');
+  const [currentSectionIdx, setCurrentSectionIdx] = useState(0);
 
   const prev = () => setIdx((i) => (i - 1 + gallery.length) % gallery.length);
   const next = () => setIdx((i) => (i + 1) % gallery.length);
@@ -96,83 +105,136 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         </div>
       </motion.header>
 
-      <motion.section
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.4 }}
-        className="mb-12"
-      >
-        <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-text dark:text-text-dark">{t('project.gallery')}</h2>
-        <div className="relative w-full max-w-5xl mx-auto">
-          <motion.div
-            key={idx}
-            initial={{ opacity: 0, scale: 0.96 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.4 }}
-            className="relative w-full h-96 md:h-[32rem] rounded-xl overflow-hidden border border-primary/20 bg-card dark:bg-card-dark shadow-lg group cursor-pointer"
-            onClick={() => setIsModalOpen(true)}
-          >
-            <Image
-              src={gallery[idx]}
-              alt={`${project.title} — capture ${idx + 1}`}
-              fill
-              sizes="(min-width: 1024px) 75vw, 90vw"
-              className="object-cover"
-              priority
-            />
-            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileHover={{ opacity: 1, scale: 1 }}
-                className="opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              >
-                <div className="bg-white/90 dark:bg-black/90 p-3 rounded-full shadow-lg">
-                  <Expand size={24} className="text-text dark:text-text-dark" />
+      {/* Galerie par sections pour Dinary ou galerie classique pour les autres */}
+      {params.slug === 'dinary-payment-app' && project.imagesSections ? (
+        <motion.section
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="mb-12 space-y-12"
+        >
+          <h2 className="text-2xl md:text-3xl font-semibold mb-8 text-text dark:text-text-dark">{t('project.gallery')}</h2>
+          
+          {Object.entries(project.imagesSections).map(([sectionKey, section], sectionIdx) => (
+            <div key={sectionKey} className="space-y-6">
+              {/* Description de la section */}
+              <div className="space-y-3 text-center max-w-3xl mx-auto">
+                <h3 className="text-2xl font-semibold text-accent">
+                  {t(`project.dinary.sections.${sectionKey}.title`)}
+                </h3>
+                <p className="text-text/80 dark:text-text-dark/80 leading-relaxed">
+                  {t(`project.dinary.sections.${sectionKey}.description`)}
+                </p>
+                <div className="flex items-center justify-center gap-2 text-sm text-accent">
+                  <span className="w-2 h-2 bg-accent rounded-full"></span>
+                  {section.images.length} capture{section.images.length > 1 ? 's' : ''}
                 </div>
-              </motion.div>
-            </div>
-          </motion.div>
-          {gallery.length > 1 && (
-            <>
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  prev();
-                }}
-                className="absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-card/80 dark:bg-card-dark/80 shadow-lg hover:bg-card dark:hover:bg-card-dark hover:scale-110 transition-all duration-200 z-10"
-                aria-label={t('project.previous')}
-              >
-                <ChevronLeft size={20} className="text-text dark:text-text-dark" />
-              </button>
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  next();
-                }}
-                className="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-card/80 dark:bg-card-dark/80 shadow-lg hover:bg-card dark:hover:bg-card-dark hover:scale-110 transition-all duration-200 z-10"
-                aria-label={t('project.next')}
-              >
-                <ChevronRight size={20} className="text-text dark:text-text-dark" />
-              </button>
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-                {gallery.map((_, i) => (
-                  <button
-                    key={i}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setIdx(i);
-                    }}
-                    className={`w-2 h-2 rounded-full transition-all ${
-                      i === idx ? 'bg-accent w-6' : 'bg-muted'
-                    }`}
-                    aria-label={`Go to image ${i + 1}`}
-                  />
-                ))}
               </div>
-            </>
-          )}
-        </div>
-      </motion.section>
+              
+              {/* Carrousel */}
+              <div className="w-full">
+                <SectionCarousel 
+                  images={section.images} 
+                  title={section.title}
+                  sectionKey={sectionKey}
+                  onImageClick={(imageIdx) => {
+                    setCurrentSection(sectionKey);
+                    setCurrentSectionIdx(imageIdx);
+                    setIsModalOpen(true);
+                  }}
+                />
+              </div>
+              
+              {/* Séparateur entre sections */}
+              {sectionIdx < Object.entries(project.imagesSections || {}).length - 1 && (
+                <div className="mt-12 mb-8">
+                  <div className="w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent"></div>
+                </div>
+              )}
+            </div>
+          ))}
+        </motion.section>
+      ) : (
+        <motion.section
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="mb-12"
+        >
+          <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-text dark:text-text-dark">{t('project.gallery')}</h2>
+          <div className="relative w-full max-w-5xl mx-auto">
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, scale: 0.96 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.4 }}
+              className="relative w-full h-96 md:h-[32rem] rounded-xl overflow-hidden border border-primary/20 bg-card dark:bg-card-dark shadow-lg group cursor-pointer"
+              onClick={() => setIsModalOpen(true)}
+            >
+              <Image
+                src={gallery[idx]}
+                alt={`${project.title} — capture ${idx + 1}`}
+                fill
+                sizes="(min-width: 1024px) 75vw, 90vw"
+                className="object-cover"
+                priority
+              />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileHover={{ opacity: 1, scale: 1 }}
+                  className="opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                >
+                  <div className="bg-white/90 dark:bg-black/90 p-3 rounded-full shadow-lg">
+                    <Expand size={24} className="text-text dark:text-text-dark" />
+                  </div>
+                </motion.div>
+              </div>
+            </motion.div>
+            {gallery.length > 1 && (
+              <>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    prev();
+                  }}
+                  className="absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-card/80 dark:bg-card-dark/80 shadow-lg hover:bg-card dark:hover:bg-card-dark hover:scale-110 transition-all duration-200 z-10"
+                  aria-label={t('project.previous')}
+                >
+                  <ChevronLeft size={20} className="text-text dark:text-text-dark" />
+                </button>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    next();
+                  }}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-card/80 dark:bg-card-dark/80 shadow-lg hover:bg-card dark:hover:bg-card-dark hover:scale-110 transition-all duration-200 z-10"
+                  aria-label={t('project.next')}
+                >
+                  <ChevronRight size={20} className="text-text dark:text-text-dark" />
+                </button>
+                
+                {/* Indicateurs */}
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                  {gallery.map((_, i) => (
+                    <button
+                      key={i}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setIdx(i);
+                      }}
+                      className={`w-2 h-2 rounded-full transition-all ${
+                        i === idx ? 'bg-accent w-6' : 'bg-muted'
+                      }`}
+                      aria-label={`Go to image ${i + 1}`}
+                    />
+                  ))}
+                </div>
+              </>
+            )}
+          </div>
+        </motion.section>
+      )}
 
       <motion.section
         initial={{ opacity: 0, y: 30 }}
@@ -228,8 +290,16 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             onClick={(e) => e.stopPropagation()}
           >
             <Image
-              src={gallery[idx]}
-              alt={`${project.title} — capture ${idx + 1}`}
+              src={
+                params.slug === 'dinary-payment-app' && currentSection && project.imagesSections
+                  ? project.imagesSections[currentSection].images[currentSectionIdx]
+                  : gallery[idx]
+              }
+              alt={`${project.title} — capture ${
+                params.slug === 'dinary-payment-app' && currentSection
+                  ? currentSectionIdx + 1
+                  : idx + 1
+              }`}
               width={1200}
               height={800}
               className="max-w-full max-h-full object-contain rounded-lg"
@@ -246,17 +316,32 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             </button>
 
             {/* Navigation dans la modal */}
-            {gallery.length > 1 && (
+            {((params.slug === 'dinary-payment-app' && currentSection && project.imagesSections && project.imagesSections[currentSection].images.length > 1) || 
+              (params.slug !== 'dinary-payment-app' && gallery.length > 1)) && (
               <>
                 <button
-                  onClick={prev}
+                  onClick={() => {
+                    if (params.slug === 'dinary-payment-app' && currentSection && project.imagesSections) {
+                      const sectionImages = project.imagesSections[currentSection].images;
+                      setCurrentSectionIdx((i) => (i - 1 + sectionImages.length) % sectionImages.length);
+                    } else {
+                      prev();
+                    }
+                  }}
                   className="absolute left-6 top-1/2 -translate-y-1/2 p-4 rounded-full bg-black/60 hover:bg-black/80 hover:scale-110 transition-all duration-200 backdrop-blur-md border-2 border-white/50 shadow-2xl"
                   aria-label={t('project.previous')}
                 >
                   <ChevronLeft size={32} className="text-white drop-shadow-lg" />
                 </button>
                 <button
-                  onClick={next}
+                  onClick={() => {
+                    if (params.slug === 'dinary-payment-app' && currentSection && project.imagesSections) {
+                      const sectionImages = project.imagesSections[currentSection].images;
+                      setCurrentSectionIdx((i) => (i + 1) % sectionImages.length);
+                    } else {
+                      next();
+                    }
+                  }}
                   className="absolute right-6 top-1/2 -translate-y-1/2 p-4 rounded-full bg-black/60 hover:bg-black/80 hover:scale-110 transition-all duration-200 backdrop-blur-md border-2 border-white/50 shadow-2xl"
                   aria-label={t('project.next')}
                 >
@@ -265,12 +350,22 @@ export default function ProjectPage({ params }: ProjectPageProps) {
                 
                 {/* Indicateurs dans la modal */}
                 <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3 bg-black/50 px-4 py-2 rounded-full backdrop-blur-md border border-white/30">
-                  {gallery.map((_, i) => (
+                  {(params.slug === 'dinary-payment-app' && currentSection && project.imagesSections
+                    ? project.imagesSections[currentSection].images
+                    : gallery
+                  ).map((_, i) => (
                     <button
                       key={i}
-                      onClick={() => setIdx(i)}
+                      onClick={() => {
+                        if (params.slug === 'dinary-payment-app' && currentSection) {
+                          setCurrentSectionIdx(i);
+                        } else {
+                          setIdx(i);
+                        }
+                      }}
                       className={`w-3 h-3 rounded-full transition-all border border-white/30 ${
-                        i === idx ? 'bg-white w-8 shadow-lg' : 'bg-white/60 hover:bg-white/80'
+                        i === (params.slug === 'dinary-payment-app' && currentSection ? currentSectionIdx : idx)
+                          ? 'bg-white w-8 shadow-lg' : 'bg-white/60 hover:bg-white/80'
                       }`}
                       aria-label={`Go to image ${i + 1}`}
                     />

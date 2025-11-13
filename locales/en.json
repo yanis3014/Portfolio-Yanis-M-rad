@@ -7,8 +7,8 @@
   },
   "hero": {
     "greeting": "Hi, I’m",
-    "intro": "20 years old, student passionate about modern web development.",
-    "description": "Currently in my 2nd year of integrated prep at Polytech Nice Sophia Antipolis, I specialize in creating performant and elegant web applications with Next.js, TypeScript, and Tailwind CSS.",
+    "intro": "20 years old, student passionate about computer science and technological innovation.",
+    "description": "Currently in my 2nd year of integrated prep at Polytech Nice Sophia Antipolis, I develop my computer science skills with a focus on programming, algorithms, and technological innovation.",
     "cta": {
       "projects": "See my projects",
       "contact": "Get in touch"
@@ -127,7 +127,25 @@
     "dinary": {
       "description": "Revolutionary mobile payment application developed for the Algerian market. Dinary offers a complete QR code payment solution with sophisticated architecture featuring three distinct interfaces: Client, Merchant, and Administrator.",
       "details": "The application integrates a robust backend entirely developed with advanced features: secure authentication system, merchant geolocation on interactive map, referral system, multi-level rewards program, and real-time transaction management. The admin interface provides total control with identity verification tools, merchant moderation, and detailed analytics.",
-      "conclusion": "This ambitious project demonstrates complete full-stack development mastery with particular attention to financial transaction security and user experience in the context of Algeria's mobile payment market."
+      "conclusion": "This ambitious project demonstrates complete full-stack development mastery with particular attention to financial transaction security and user experience in the context of Algeria's mobile payment market.",
+      "sections": {
+        "login": {
+          "title": "Authentication & Registration",
+          "description": "Secure authentication system with user registration, data validation and session management. Intuitive interface for accessing different account types."
+        },
+        "client": {
+          "title": "Client Interface",
+          "description": "Complete mobile application for end users with QR code payment, merchant geolocation, rewards system and personal profile management."
+        },
+        "merchant": {
+          "title": "Merchant Interface",
+          "description": "Professional dashboard for merchants with QR code generation, transaction tracking, sales analytics and commercial profile management."
+        },
+        "admin": {
+          "title": "Administrator Interface",
+          "description": "Complete administration panel with user management, merchant moderation, identity verification, advanced analytics and total platform control."
+        }
+      }
     }
   },
   "stats": {

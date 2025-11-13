@@ -33,14 +33,61 @@
     "title": "Dinary — Application de Paiement Mobile",
     "description": "Application de paiement mobile complète pour l'Algérie avec QR codes, géolocalisation des commerçants, système de récompenses et architecture multi-interfaces (Client, Commerçant, Admin).",
     "technologies": ["React Native", "Node.js", "Express", "MongoDB", "Socket.io", "QR Code"],
-    "image": "/images/website3/first.png",
-    "images": [
-      "/images/website3/first.png",
-      "/images/website3/second.png",
-      "/images/website3/third.png",
-      "/images/website3/fourth.png",
-      "/images/website3/fifth.png"
-    ],
+    "image": "/images/website3/interface-client/client-home.png",
+    "imagesSections": {
+      "login": {
+        "title": "Authentification",
+        "images": [
+          "/images/website3/login-registration/login-1.png",
+          "/images/website3/login-registration/registration-1.png"
+        ]
+      },
+      "client": {
+        "title": "Interface Client",
+        "images": [
+          "/images/website3/interface-client/client-home.png",
+          "/images/website3/interface-client/client-qr-scan.png",
+          "/images/website3/interface-client/client-map.png",
+          "/images/website3/interface-client/client-profile.png",
+          "/images/website3/interface-client/client-rewards.png",
+          "/images/website3/interface-client/client-transactions.png",
+          "/images/website3/interface-client/client-settings.png"
+        ]
+      },
+      "merchant": {
+        "title": "Interface Marchand",
+        "images": [
+          "/images/website3/interface-marchand/merchant-dashboard.png",
+          "/images/website3/interface-marchand/merchant-qr-generate.png",
+          "/images/website3/interface-marchand/merchant-transactions.png",
+          "/images/website3/interface-marchand/merchant-analytics.png",
+          "/images/website3/interface-marchand/merchant-profile.png",
+          "/images/website3/interface-marchand/merchant-settings.png"
+        ]
+      },
+      "admin": {
+        "title": "Interface Admin",
+        "images": [
+          "/images/website3/interface-admin/admin-dashboard.png",
+          "/images/website3/interface-admin/admin-users-list.png",
+          "/images/website3/interface-admin/admin-user-details.png",
+          "/images/website3/interface-admin/admin-merchants-list.png",
+          "/images/website3/interface-admin/admin-merchant-verification.png",
+          "/images/website3/interface-admin/admin-transactions.png",
+          "/images/website3/interface-admin/admin-analytics-1.png",
+          "/images/website3/interface-admin/admin-analytics-2.png",
+          "/images/website3/interface-admin/admin-reports.png",
+          "/images/website3/interface-admin/admin-settings.png",
+          "/images/website3/interface-admin/admin-notifications.png",
+          "/images/website3/interface-admin/admin-security.png",
+          "/images/website3/interface-admin/admin-logs.png",
+          "/images/website3/interface-admin/admin-backup.png",
+          "/images/website3/interface-admin/admin-system-config.png",
+          "/images/website3/interface-admin/admin-permissions.png",
+          "/images/website3/interface-admin/admin-monitoring.png"
+        ]
+      }
+    },
     "github": "https://github.com/votre-username/dinary-payment-app",
     "demo": "https://dinary-app.vercel.app"
   }

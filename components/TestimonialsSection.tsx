@@ -9,19 +9,19 @@ export default function TestimonialsSection() {
 
   const testimonials = [
     {
-      name: 'Alice D.',
-      role: 'Chef de projet',
+      name: 'Selim M.',
+      role: 'Responsable des évènements – 50 ans de la Faculté de Pharmacie de Monastir (FPHM)',
       content: locale === 'fr'
-        ? 'Yanis a livré une landing page moderne et responsive dans les délais. Son code est propre et bien documenté.'
-        : 'Yanis delivered a modern, responsive landing page on time. His code is clean and well documented.',
+        ? 'Travailler avec Yanis a été un vrai plaisir. Il a développé pour nous deux plateformes indispensables : le site d\'inscription du Pharmathon et celui du Forum de la Recherche. Le résultat a dépassé nos attentes : interfaces claires, système d\'inscriptions fiable, gestion des paiements, back-office complet… tout a été pensé avec sérieux et professionnalisme. Yanis s\'est montré réactif, autonome et force de proposition. Nous avons reçu d\'excellents retours des participants grâce à ses outils.'
+        : 'Working with Yanis was a real pleasure. He developed two essential platforms for us: the Pharmathon registration site and the Research Forum site. The result exceeded our expectations: clear interfaces, reliable registration system, payment management, complete back-office... everything was designed with seriousness and professionalism. Yanis was responsive, autonomous and proactive. We received excellent feedback from participants thanks to his tools.',
       rating: 5,
     },
     {
-      name: 'Marc L.',
-      role: 'Freelance UX',
+      name: 'Karim',
+      role: 'Fondateur de l\'application de paiement Dinary',
       content: locale === 'fr'
-        ? 'Collaboration très agréable. Yanis a su transformer ma maquette en une interface interactive et performante.'
-        : 'Very pleasant collaboration. Yanis turned my mockup into an interactive and performant interface.',
+        ? 'Yanis a conçu l\'intégralité du backend de Dinary, une application mobile de paiement destinée au marché algérien. Il a réussi à construire une architecture robuste et sécurisée couvrant nos trois interfaces principales : commerçant, utilisateur et administrateur. Son travail a été irréprochable : documentation claire, API bien structurée, délais respectés et une réelle compréhension de nos besoins métier. C\'est un développeur sérieux, fiable et capable de prendre en charge des fonctionnalités complexes.'
+        : 'Yanis designed the entire backend of Dinary, a mobile payment application for the Algerian market. He managed to build a robust and secure architecture covering our three main interfaces: merchant, user and administrator. His work was impeccable: clear documentation, well-structured API, deadlines met and a real understanding of our business needs. He is a serious, reliable developer capable of handling complex features.',
       rating: 5,
     },
   ];
