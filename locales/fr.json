@@ -86,7 +86,9 @@
   },
   "nonogram": {
     "description": "Cette première illustration montre une grille de Nonogramme entièrement vide avec uniquement les indices autour. Elle représente l'état initial du puzzle : aucune case n'est encore coloriée et seule la structure logique du problème est visible.",
+    "generation": "Cette étape correspond à la génération automatique des grilles : soit de manière aléatoire avec une densité contrôlée, soit à partir d'images converties en grilles binaires.",
     "resolution": "Ici, la grille est remplie de manière aléatoire : on génère automatiquement des motifs de cases noires en respectant une densité cible. Cette étape illustre comment le système crée des Nonogrammes aléatoires avant même d'appliquer les solveurs.",
+    "analysis": "Cette partie illustre l'analyse des performances des solveurs en fonction de la taille de la grille, de la densité et de la structure des motifs.",
     "details": "Cette image met en avant les étapes de résolution d'un Nonogramme. On visualise la progression du solveur qui, à partir des indices, déduit progressivement quelles cases doivent être coloriées ou laissées vides jusqu'à rendre la grille cohérente.",
     "learnings": "Ce visuel montre un Nonogramme complètement résolu. Il illustre le résultat final après application de la programmation par contraintes : la grille respecte l'ensemble des indices et révèle le motif caché que l'on cherchait à reconstruire.",
     "conclusion": "La dernière illustration compare le comportement des deux modèles de résolution, Ternaire et Regular, sur des puzzles similaires. Elle met en évidence leurs différences en termes de temps de calcul, de robustesse et de capacité à gérer des grilles de tailles et de structures variées.",
