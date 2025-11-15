@@ -12,6 +12,8 @@
     ],
     "github": "https://github.com/yanis3014/marathon-marchaton-pharmacy.git",
     "demo": "https://marathon-marchaton-pharmacy.vercel.app/"
+    ,
+    "category": "web"
   },
   {
     "slug": "forum-recherche-monastir",
@@ -27,6 +29,8 @@
     ],
     "github": "https://github.com/votre-username/forum-recherche-monastir",
     "demo": "https://forum-recherche-monastir.vercel.app"
+    ,
+    "category": "web"
   },
   {
     "slug": "dinary-payment-app",
@@ -90,13 +94,22 @@
     },
     "github": "https://github.com/votre-username/dinary-payment-app",
     "demo": "https://dinary-app.vercel.app"
+    ,
+    "category": "web"
   },
   {
     "slug": "nonogram-constraint-solver",
     "title": "Nonogram Solver — Programmation par contraintes",
     "description": "Conception d'un système complet de génération et résolution de Nonogrammes via Choco-Solver, avec analyse des performances en fonction de la taille, de la densité et de la structure du puzzle.",
     "technologies": ["Java", "Choco-Solver", "Programmation par contraintes", "Analyse d'algorithmes"],
-    "image": "/images/website1/first.png",
-    "category": "programming"
+    "image": "/images/nonogram-images/crop_1.png",
+    "gallery": [
+      "/images/nonogram-images/crop_1.png",
+      "/images/nonogram-images/crop_2.png",
+      "/images/nonogram-images/crop_4.png",
+      "/images/nonogram-images/crop_5.png",
+      "/images/nonogram-images/crop_6.png"
+    ],
+    "category": "algorithms"
   }
 ]

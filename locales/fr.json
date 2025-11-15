@@ -85,15 +85,22 @@
     }
   },
   "nonogram": {
-    "description": "Ce projet de stage au laboratoire I3S porte sur la programmation par contraintes appliquée aux Nonogrammes : génération, résolution par modèles Regular & Ternaire ainsi qu'analyse des performances selon taille, densité et structure.",
-    "details": "La plateforme génère à la fois des grilles aléatoires contrôlées (de densité 0.1 à 0.9) et des Nonogrammes dérivés d'images, extrait automatiquement les contraintes, puis alimente deux solveurs PPC (Regular via automate et Ternaire via transitions élémentaires).",
-    "conclusion": "L'étude montre que les Nonogrammes issus d'images sont plus structurés et plus faciles, que le modèle Ternaire est plus rapide pour de petites grilles aléatoires tandis que le modèle Regular reste plus efficace pour des grilles jusqu'à 200×200.",
-    "generation": "Génération aléatoire avec contrôle de densité 0.1 → 0.9, extraction automatique des blocs et conversion d'images en grilles binaires.",
-    "resolution": "Deux solveurs Choco-Solver : Regular avec automate fini pour vérifier les séquences, et Ternaire qui décompose les contraintes en transitions élémentaires.",
-    "analysis": "Analyse d'impact de la taille de grille et de la densité (difficulté maximale à densités moyennes) ainsi que comparaison des deux modèles pour diverses structures.",
-    "learnings": "Les Nonogrammes étant NP-difficiles, les temps augmentent fortement, la génération ne garantit pas toujours une solution unique, et les puzzles structurés sont plus simples à résoudre."
+    "description": "Cette première illustration montre une grille de Nonogramme entièrement vide avec uniquement les indices autour. Elle représente l'état initial du puzzle : aucune case n'est encore coloriée et seule la structure logique du problème est visible.",
+    "resolution": "Ici, la grille est remplie de manière aléatoire : on génère automatiquement des motifs de cases noires en respectant une densité cible. Cette étape illustre comment le système crée des Nonogrammes aléatoires avant même d'appliquer les solveurs.",
+    "details": "Cette image met en avant les étapes de résolution d'un Nonogramme. On visualise la progression du solveur qui, à partir des indices, déduit progressivement quelles cases doivent être coloriées ou laissées vides jusqu'à rendre la grille cohérente.",
+    "learnings": "Ce visuel montre un Nonogramme complètement résolu. Il illustre le résultat final après application de la programmation par contraintes : la grille respecte l'ensemble des indices et révèle le motif caché que l'on cherchait à reconstruire.",
+    "conclusion": "La dernière illustration compare le comportement des deux modèles de résolution, Ternaire et Regular, sur des puzzles similaires. Elle met en évidence leurs différences en termes de temps de calcul, de robustesse et de capacité à gérer des grilles de tailles et de structures variées.",
+    "zoomHint": "Cliquez sur l’image pour l’ouvrir en grand et mieux visualiser les détails."
   },
   "projects": {
+    "devSection": {
+      "title": "Projets de développement web",
+      "subtitle": "Sélection de plateformes et d'applications web complètes, développées avec des stacks modernes pour des besoins réels (événements, paiements, gestion d’utilisateurs, etc.)."
+    },
+    "algorithmsSection": {
+      "title": "Algorithmes & Programmation par contraintes",
+      "subtitle": "Projets centrés sur la modélisation de problèmes complexes, la résolution par contraintes et l’analyse de performances algorithmiques."
+    },
     "major": {
       "title": "Développements de programmes majeurs",
       "subtitle": "Exploration des projets de programmation complexes réalisés en stage ou recherche, avec un focus sur les Nonogrammes et l'analyse algorithmiques.",

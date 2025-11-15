@@ -20,6 +20,7 @@ interface Project {
   description: string;
   technologies: string[];
   image: string;
+  gallery?: string[];
   images?: string[];
   imagesSections?: Record<string, ImageSection>;
   github?: string;
@@ -39,7 +40,11 @@ export default function ProjectPage({ params }: ProjectPageProps) {
 
   if (!project) notFound();
 
-  const gallery = project.images?.length ? project.images : [project.image];
+  const gallery = project.gallery?.length
+    ? project.gallery
+    : project.images?.length
+    ? project.images
+    : [project.image];
   const [idx, setIdx] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentSection, setCurrentSection] = useState<string>('');
@@ -154,6 +159,63 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             </div>
           ))}
         </motion.section>
+      ) : params.slug === 'nonogram-constraint-solver' ? (
+        <motion.section
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="mb-12"
+        >
+          <h2 className="text-2xl md:text-3xl font-semibold mb-8 text-text dark:text-text-dark">{t('project.gallery')}</h2>
+          <div className="space-y-10">
+            <div className="space-y-8">
+            {gallery.map((image, imageIdx) => {
+              const isEven = imageIdx % 2 === 0;
+              const nonogramTexts = [
+                t('nonogram.description'),
+                t('nonogram.resolution'),
+                t('nonogram.details'),
+                t('nonogram.learnings'),
+                t('nonogram.conclusion')
+              ];
+              const altText = nonogramTexts[Math.min(imageIdx, nonogramTexts.length - 1)];
+              return (
+                <motion.div
+                  key={`${image}-${imageIdx}`}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.45, delay: 0.05 * imageIdx }}
+                  viewport={{ once: true }}
+                  className={`grid gap-4 items-center rounded-3xl border border-primary/10 bg-card/80 p-4 shadow-lg dark:bg-card-dark/80 md:grid-cols-[1fr_1fr] ${!isEven ? 'md:grid-flow-col-dense' : ''}`}
+                >
+                  <div
+                    className={`relative w-full overflow-hidden rounded-2xl border border-primary/20 bg-card dark:bg-card-dark aspect-square shadow-xl cursor-pointer ${isEven ? '' : 'md:order-2'}`}
+                    onClick={() => {
+                      setIdx(imageIdx);
+                      setIsModalOpen(true);
+                    }}
+                  >
+                    <Image
+                      src={image}
+                      alt={`${project.title} — aperçu ${imageIdx + 1}`}
+                      fill
+                      className="object-cover"
+                      priority
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                  </div>
+                  <div className={`space-y-2 text-sm leading-relaxed text-text/80 dark:text-text-dark/80 ${!isEven ? 'md:order-1 md:text-right' : ''}`}>
+                    <p>{altText}</p>
+                    <p className="text-xs text-text/60 dark:text-text-dark/60 italic">
+                      {t('nonogram.zoomHint')}
+                    </p>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </motion.section>
       ) : (
         <motion.section
           initial={{ opacity: 0, y: 30 }}

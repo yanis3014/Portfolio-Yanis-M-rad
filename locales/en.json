@@ -91,9 +91,18 @@
     "generation": "Random generation with density control, automatic block extraction, and conversion of images into binary grids.",
     "resolution": "Two Choco-Solver solvers: Regular ensures sequences via finite automaton, Ternary breaks constraints into elemental transitions.",
     "analysis": "Study on grid-size/density impact (intermediate densities hardest) plus solver comparison across diverse structures.",
-    "learnings": "Nonograms are NP-hard, runtimes grow quickly, generation may lack uniqueness, and structured puzzles are easier to solve."
+    "learnings": "Nonograms are NP-hard, runtimes grow quickly, generation may lack uniqueness, and structured puzzles are easier to solve.",
+    "zoomHint": "Click the image to open it in full size and better see all the details."
   },
   "projects": {
+    "devSection": {
+      "title": "Web development projects",
+      "subtitle": "Selection of complete web platforms and applications built with modern stacks for real-world needs (events, payments, user management, etc.)."
+    },
+    "algorithmsSection": {
+      "title": "Algorithms & Constraint Programming",
+      "subtitle": "Projects focused on modeling complex problems, solving them with constraints, and analyzing algorithmic performance."
+    },
     "major": {
       "title": "Major program developments",
       "subtitle": "Showcase of complex programming projects from internships or research, with a focus on Nonograms and algorithmic analysis.",
