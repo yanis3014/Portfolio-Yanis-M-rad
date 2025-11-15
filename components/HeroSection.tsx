@@ -24,13 +24,26 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-primary/20 to-primary/40 dark:from-primary/20 dark:via-primary/30 dark:to-primary/50" />
       </div>
 
+      {/* Mobile title pinned near the top */}
+      <div className="absolute inset-x-0 top-4 md:hidden z-10 px-4 flex justify-end">
+        <motion.h1
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-4xl font-bold text-right text-secondary drop-shadow-lg max-w-xs"
+        >
+          {t('hero.greeting')}
+          <span className="text-blue-900 block">Yanis M'rad</span>
+        </motion.h1>
+      </div>
+
       {/* Text content over background */}
       <div className="relative z-10 text-right max-w-2xl ml-auto mr-4 px-4 mb-8">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl font-bold mb-4 text-secondary drop-shadow-lg"
+          className="hidden md:block text-4xl md:text-5xl font-bold mb-4 text-secondary drop-shadow-lg"
         >
           {t('hero.greeting')} <span className="text-blue-900">Yanis M'rad</span>
         </motion.h1>

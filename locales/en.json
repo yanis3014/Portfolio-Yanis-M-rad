@@ -84,6 +84,22 @@
       }
     }
   },
+  "nonogram": {
+    "description": "This I3S lab internship project explores constraint programming applied to Nonograms: generation, Regular & Ternary solver models, and performance analysis across size, density, and structure.",
+    "details": "The platform generates both controlled random grids (density 0.1 to 0.9) and image-derived Nonograms, extracts constraints automatically, and feeds two Choco-Solver models (Regular via automaton and Ternary via elemental transitions).",
+    "conclusion": "Analysis shows image-based Nonograms are more structured and easier, the Ternary model excels on small random grids, while the Regular model remains efficient up to 200×200 puzzles.",
+    "generation": "Random generation with density control, automatic block extraction, and conversion of images into binary grids.",
+    "resolution": "Two Choco-Solver solvers: Regular ensures sequences via finite automaton, Ternary breaks constraints into elemental transitions.",
+    "analysis": "Study on grid-size/density impact (intermediate densities hardest) plus solver comparison across diverse structures.",
+    "learnings": "Nonograms are NP-hard, runtimes grow quickly, generation may lack uniqueness, and structured puzzles are easier to solve."
+  },
+  "projects": {
+    "major": {
+      "title": "Major program developments",
+      "subtitle": "Showcase of complex programming projects from internships or research, with a focus on Nonograms and algorithmic analysis.",
+      "cta": "See the full story"
+    }
+  },
   "contact": {
     "title": "Contact",
     "subtitle": "Have an idea, a project, or just want to chat? Feel free to send me a message.",

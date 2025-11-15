@@ -12,10 +12,33 @@ export default function ContactPage() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setStatus('Merci ! Je reviens vers vous au plus vite.');
-    setForm({ name: '', email: '', message: '' });
+    setStatus('Envoi en cours...');
+
+    const formElement = e.target as HTMLFormElement;
+    const formData = new FormData(formElement);
+
+    try {
+      const response = await fetch('https://formspree.io/f/xanaebne', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+        },
+        body: formData,
+      });
+
+      if (response.ok) {
+        setStatus('Merci ! Votre message a bien été envoyé.');
+        setForm({ name: '', email: '', message: '' });
+        formElement.reset();
+      } else {
+        setStatus('Une erreur est survenue. Merci de réessayer.');
+      }
+    } catch (error) {
+      setStatus('Une erreur est survenue. Merci de réessayer.');
+    }
+
     setTimeout(() => setStatus(''), 5000);
   };
 
@@ -137,14 +160,14 @@ export default function ContactPage() {
             </h2>
             <div className="space-y-4">
               <a
-                href="mailto:votre.email@example.com"
+                href="mailto:yanismrad2005@gmail.com"
                 className="flex items-center gap-3 text-sm hover:text-accent transition-colors"
               >
                 <Mail size={18} className="text-accent" />
-                <span>votre.email@example.com</span>
+                <span>yanismrad2005@gmail.com</span>
               </a>
               <a
-                href="https://github.com/votre-github"
+                href="https://github.com/yanis3014"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 text-sm hover:text-accent transition-colors"
@@ -154,7 +177,7 @@ export default function ContactPage() {
               </a>
 
               <a
-                href="https://www.linkedin.com/in/votre-linkedin/"
+                href="https://www.linkedin.com/in/yanis-m-rad-162047356/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 text-sm hover:text-accent transition-colors"

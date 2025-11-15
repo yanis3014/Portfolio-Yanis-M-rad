@@ -13,7 +13,7 @@ export default function Footer() {
     <footer className="mt-16 border-t border-gray-200 dark:border-gray-700 py-6 text-center">
       <div className="flex justify-center space-x-4">
         <a
-          href="https://github.com/votre-github"
+          href="https://github.com/yanis3014"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="GitHub"
@@ -22,7 +22,7 @@ export default function Footer() {
           <Github />
         </a>
         <a
-          href="https://www.linkedin.com/in/votre-linkedin/"
+          href="https://www.linkedin.com/in/yanis-m-rad-162047356/"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="LinkedIn"

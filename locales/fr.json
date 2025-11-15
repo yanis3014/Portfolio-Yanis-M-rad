@@ -84,6 +84,22 @@
       }
     }
   },
+  "nonogram": {
+    "description": "Ce projet de stage au laboratoire I3S porte sur la programmation par contraintes appliquée aux Nonogrammes : génération, résolution par modèles Regular & Ternaire ainsi qu'analyse des performances selon taille, densité et structure.",
+    "details": "La plateforme génère à la fois des grilles aléatoires contrôlées (de densité 0.1 à 0.9) et des Nonogrammes dérivés d'images, extrait automatiquement les contraintes, puis alimente deux solveurs PPC (Regular via automate et Ternaire via transitions élémentaires).",
+    "conclusion": "L'étude montre que les Nonogrammes issus d'images sont plus structurés et plus faciles, que le modèle Ternaire est plus rapide pour de petites grilles aléatoires tandis que le modèle Regular reste plus efficace pour des grilles jusqu'à 200×200.",
+    "generation": "Génération aléatoire avec contrôle de densité 0.1 → 0.9, extraction automatique des blocs et conversion d'images en grilles binaires.",
+    "resolution": "Deux solveurs Choco-Solver : Regular avec automate fini pour vérifier les séquences, et Ternaire qui décompose les contraintes en transitions élémentaires.",
+    "analysis": "Analyse d'impact de la taille de grille et de la densité (difficulté maximale à densités moyennes) ainsi que comparaison des deux modèles pour diverses structures.",
+    "learnings": "Les Nonogrammes étant NP-difficiles, les temps augmentent fortement, la génération ne garantit pas toujours une solution unique, et les puzzles structurés sont plus simples à résoudre."
+  },
+  "projects": {
+    "major": {
+      "title": "Développements de programmes majeurs",
+      "subtitle": "Exploration des projets de programmation complexes réalisés en stage ou recherche, avec un focus sur les Nonogrammes et l'analyse algorithmiques.",
+      "cta": "Voir la page complète"
+    }
+  },
   "contact": {
     "title": "Contact",
     "subtitle": "Une idée, un projet, ou simplement envie d’échanger ? N’hésitez pas à m’envoyer un message.",

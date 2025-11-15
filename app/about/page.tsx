@@ -220,7 +220,7 @@ export default function AboutPage() {
             {t('about.contactBtn')}
           </Link>
           <a
-            href="https://github.com/votre-github"
+            href="https://github.com/yanis3014"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-sm hover:text-accent transition-colors text-text dark:text-text-dark"
@@ -229,7 +229,7 @@ export default function AboutPage() {
             GitHub
           </a>
           <a
-            href="https://www.linkedin.com/in/votre-linkedin/"
+            href="https://www.linkedin.com/in/yanis-m-rad-162047356/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-sm hover:text-accent transition-colors text-text dark:text-text-dark"
@@ -237,7 +237,7 @@ export default function AboutPage() {
             <Linkedin size={18} />
             LinkedIn
           </a>
-          <a href="mailto:votre.email@example.com" className="flex items-center gap-2 text-sm hover:text-accent transition-colors text-text dark:text-text-dark">
+          <a href="mailto:yanismrad2005@gmail.com" className="flex items-center gap-2 text-sm hover:text-accent transition-colors text-text dark:text-text-dark">
             <Mail size={18} />
             Email
           </a>

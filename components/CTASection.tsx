@@ -41,7 +41,7 @@ export default function CTASection() {
 
         <div className="flex items-center justify-center gap-6 text-sm">
           <a
-            href="https://github.com/votre-github"
+            href="https://github.com/yanis3014"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 hover:underline"
@@ -49,7 +49,7 @@ export default function CTASection() {
             <Github size={18} /> GitHub
           </a>
           <a
-            href="https://www.linkedin.com/in/votre-linkedin/"
+            href="https://www.linkedin.com/in/yanis-m-rad-162047356/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 hover:underline"
