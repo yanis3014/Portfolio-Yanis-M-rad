@@ -18,6 +18,7 @@ interface ImageSection {
 interface Project {
   title: string;
   description: string;
+  description_en?: string;
   technologies: string[];
   image: string;
   gallery?: string[];
@@ -33,12 +34,14 @@ interface ProjectPageProps {
 }
 
 export default function ProjectPage({ params }: ProjectPageProps) {
-  const { t } = useLocale();
+  const { t, locale } = useLocale();
   const project = projects.find(
     (p) => (p as Project & { slug?: string }).slug === params.slug || p.title.toLowerCase().replace(/[^a-z0-9]+/g, '-') === params.slug
   ) as Project | undefined;
 
   if (!project) notFound();
+
+  const description = locale === 'fr' || !project.description_en ? project.description : project.description_en;
 
   const gallery = project.gallery?.length
     ? project.gallery
@@ -74,7 +77,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         className="mb-12"
       >
         <h1 className="text-4xl md:text-5xl font-bold mb-4 text-text dark:text-text-dark">{project.title}</h1>
-        <p className="text-lg text-text/70 dark:text-text-dark/70 mb-6">{project.description}</p>
+        <p className="text-lg text-text/70 dark:text-text-dark/70 mb-6">{description}</p>
 
         <div className="flex flex-wrap gap-2 mb-8">
           {project.technologies.map((tech) => (

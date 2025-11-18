@@ -37,7 +37,7 @@
   },
   "cta": {
     "title": "Ready to collaborate?",
-    "subtitle": "I’m open for freelance work, internships, and exciting projects. Let’s talk about your idea!",
+    "subtitle": "I’m open for freelance work, internships and apprenticeships, and exciting projects. Let’s talk about your idea!",
     "contact": "Get in touch",
     "projects": "See my projects"
   },
@@ -85,13 +85,13 @@
     }
   },
   "nonogram": {
-    "description": "This I3S lab internship project explores constraint programming applied to Nonograms: generation, Regular & Ternary solver models, and performance analysis across size, density, and structure.",
-    "details": "The platform generates both controlled random grids (density 0.1 to 0.9) and image-derived Nonograms, extracts constraints automatically, and feeds two Choco-Solver models (Regular via automaton and Ternary via elemental transitions).",
-    "conclusion": "Analysis shows image-based Nonograms are more structured and easier, the Ternary model excels on small random grids, while the Regular model remains efficient up to 200×200 puzzles.",
-    "generation": "Random generation with density control, automatic block extraction, and conversion of images into binary grids.",
-    "resolution": "Two Choco-Solver solvers: Regular ensures sequences via finite automaton, Ternary breaks constraints into elemental transitions.",
-    "analysis": "Study on grid-size/density impact (intermediate densities hardest) plus solver comparison across diverse structures.",
-    "learnings": "Nonograms are NP-hard, runtimes grow quickly, generation may lack uniqueness, and structured puzzles are easier to solve.",
+    "description": "This first illustration shows a completely empty Nonogram grid with only the clues around it. It represents the initial state of the puzzle: no cell is filled yet and only the logical structure of the problem is visible.",
+    "generation": "This step corresponds to the automatic generation of grids: either randomly with controlled density, or from images converted into binary grids.",
+    "resolution": "Here the grid is filled randomly: black cell patterns are generated automatically while respecting a target density. This step illustrates how the system creates random Nonograms even before applying the solvers.",
+    "analysis": "This part illustrates the analysis of solver performance as a function of grid size, density and pattern structure.",
+    "details": "This image highlights the different steps in solving a Nonogram. We can see the progress of the solver which, using the clues, gradually deduces which cells must be filled or left empty until the grid becomes consistent.",
+    "learnings": "This visual shows a completely solved Nonogram. It illustrates the final result after applying constraint programming: the grid satisfies all the clues and reveals the hidden pattern we were trying to reconstruct.",
+    "conclusion": "The last illustration compares the behavior of the two solving models, Ternary and Regular, on similar puzzles. It highlights their differences in computation time, robustness and ability to handle grids of various sizes and structures.",
     "zoomHint": "Click the image to open it in full size and better see all the details."
   },
   "projects": {
@@ -125,7 +125,7 @@
       "location": "Location"
     },
     "social": "Social",
-    "availability": "Availability: open for internships, freelance missions, and collaborations."
+    "availability": "Availability: open for internships, apprenticeships, freelance missions, and collaborations."
   },
   "project": {
     "back": "Back to projects",

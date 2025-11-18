@@ -5,10 +5,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Github, ExternalLink } from 'lucide-react';
 import { useRef, useEffect, useState } from 'react';
+import { useLocale } from '@/contexts/LocaleContext';
 
 interface Project {
   title: string;
   description: string;
+  description_en?: string;
   technologies: string[];
   image: string;
   github?: string;
@@ -19,6 +21,7 @@ interface Project {
 export default function ProjectCard({ project }: { project: Project }): JSX.Element {
   const cardRef = useRef<HTMLDivElement>(null);
   const [isHovered, setIsHovered] = useState(false);
+  const { locale } = useLocale();
 
   // Gestion des animations au survol
   useEffect(() => {
@@ -36,6 +39,8 @@ export default function ProjectCard({ project }: { project: Project }): JSX.Elem
       card.removeEventListener('mouseleave', handleHoverEnd);
     };
   }, []);
+
+  const description = locale === 'fr' || !project.description_en ? project.description : project.description_en;
 
   return (
     <div 
@@ -69,7 +74,7 @@ export default function ProjectCard({ project }: { project: Project }): JSX.Elem
           {project.title}
         </h3>
         <p className="flex-1 text-sm text-text/70 dark:text-text-dark/70 mb-4 line-clamp-3">
-          {project.description}
+          {description}
         </p>
         <div className="mb-4 flex flex-wrap gap-2">
           {project.technologies.map((tech) => (

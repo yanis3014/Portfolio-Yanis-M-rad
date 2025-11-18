@@ -1,14 +1,25 @@
 "use client";
 
-import { Code2, Braces, Atom, Palette, GitBranch, Github, Rocket } from 'lucide-react';
+import {
+  Code2,
+  Braces,
+  Atom,
+  Palette,
+  GitBranch,
+  Github,
+  Rocket,
+} from "lucide-react";
 
 const skills = [
-  { name: 'Next.js', icon: Rocket },
-  { name: 'React', icon: Atom },
-  { name: 'TypeScript', icon: Braces },
-  { name: 'Tailwind CSS', icon: Palette },
-  { name: 'Git', icon: GitBranch },
-  { name: 'GitHub', icon: Github },
+  { name: "Next.js", icon: Rocket },
+  { name: "React", icon: Atom },
+  { name: "TypeScript", icon: Braces },
+  { name: "JavaScript", icon: Code2 },
+  { name: "Python", icon: Atom },
+  { name: "Java", icon: Braces },
+  { name: "Tailwind CSS", icon: Palette },
+  { name: "Git", icon: GitBranch },
+  { name: "GitHub", icon: Github },
 ];
 
 export default function SkillsSection() {
@@ -17,7 +28,7 @@ export default function SkillsSection() {
       <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2">
         <Code2 className="text-primary" /> Compétences
       </h2>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-6 gap-4">
         {skills.map(({ name, icon: Icon }) => (
           <div
             key={name}

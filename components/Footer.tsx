@@ -1,6 +1,7 @@
 "use client";
 
 import { Github, Linkedin, Mail } from 'lucide-react';
+import { useLocale } from '@/contexts/LocaleContext';
 
 /**
  * Site footer displaying social links and a copyright notice. Icons
@@ -9,6 +10,7 @@ import { Github, Linkedin, Mail } from 'lucide-react';
  */
 export default function Footer() {
   const year = new Date().getFullYear();
+  const { t } = useLocale();
   return (
     <footer className="mt-16 border-t border-gray-200 dark:border-gray-700 py-6 text-center">
       <div className="flex justify-center space-x-4">
@@ -39,7 +41,7 @@ export default function Footer() {
         </a>
       </div>
       <p className="text-sm mt-4 text-gray-500 dark:text-gray-400">
-        &copy; {year} Yanis M'rad. Tous droits réservés.
+        &copy; {year} {t('footer.made')}
       </p>
     </footer>
   );

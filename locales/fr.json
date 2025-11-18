@@ -37,7 +37,7 @@
   },
   "cta": {
     "title": "Prêt à collaborer ?",
-    "subtitle": "Je suis ouvert aux missions freelance, stages et projets passionnants. Discutons de votre idée !",
+    "subtitle": "Je suis ouvert aux missions freelance, stages, alternances et projets passionnants. Discutons de votre idée !",
     "contact": "Me contacter",
     "projects": "Voir mes projets"
   },
@@ -125,7 +125,7 @@
       "location": "Localisation"
     },
     "social": "Réseaux",
-    "availability": "Disponibilité : ouvert aux stages, missions freelance et collaborations."
+    "availability": "Disponibilité : ouvert aux stages, alternances, missions freelance et collaborations."
   },
   "project": {
     "back": "Retour aux projets",

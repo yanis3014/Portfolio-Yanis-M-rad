@@ -3,10 +3,12 @@
 import { motion } from 'framer-motion';
 import { Mail, Github, Linkedin, MapPin, Send, User, MessageSquare } from 'lucide-react';
 import { useState } from 'react';
+import { useLocale } from '@/contexts/LocaleContext';
 
 export default function ContactPage() {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
   const [status, setStatus] = useState('');
+  const { t, locale } = useLocale();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -14,7 +16,7 @@ export default function ContactPage() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setStatus('Envoi en cours...');
+    setStatus('sending');
 
     const formElement = e.target as HTMLFormElement;
     const formData = new FormData(formElement);
@@ -29,14 +31,14 @@ export default function ContactPage() {
       });
 
       if (response.ok) {
-        setStatus('Merci ! Votre message a bien été envoyé.');
+        setStatus('success');
         setForm({ name: '', email: '', message: '' });
         formElement.reset();
       } else {
-        setStatus('Une erreur est survenue. Merci de réessayer.');
+        setStatus('error');
       }
     } catch (error) {
-      setStatus('Une erreur est survenue. Merci de réessayer.');
+      setStatus('error');
     }
 
     setTimeout(() => setStatus(''), 5000);
@@ -52,9 +54,9 @@ export default function ContactPage() {
         viewport={{ once: true }}
         className="text-center mb-16"
       >
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">Contact</h1>
+        <h1 className="text-4xl md:text-5xl font-bold mb-4">{t('contact.title')}</h1>
         <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-          Une idée, un projet, ou simplement envie d’échanger ? N’hésitez pas à m’envoyer un message.
+          {t('contact.subtitle')}
         </p>
       </motion.section>
 
@@ -67,12 +69,12 @@ export default function ContactPage() {
           viewport={{ once: true }}
         >
           <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2">
-            <MessageSquare className="text-accent" /> Envoyez un message
+            <MessageSquare className="text-accent" /> {locale === 'fr' ? 'Envoyez un message' : 'Send a message'}
           </h2>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
               <label htmlFor="name" className="block text-sm font-medium mb-1">
-                Nom
+                {t('contact.form.name')}
               </label>
               <div className="relative">
                 <User size={18} className="absolute left-3 top-1/2 -translate-y-1/2 text-accent" />
@@ -84,14 +86,14 @@ export default function ContactPage() {
                   value={form.name}
                   onChange={handleChange}
                   className="w-full pl-10 pr-3 py-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-primary transition"
-                  placeholder="Votre nom"
+                  placeholder={locale === 'fr' ? 'Votre nom' : 'Your name'}
                 />
               </div>
             </div>
 
             <div>
               <label htmlFor="email" className="block text-sm font-medium mb-1">
-                Email
+                {t('contact.form.email')}
               </label>
               <div className="relative">
                 <Mail size={18} className="absolute left-3 top-1/2 -translate-y-1/2 text-accent" />
@@ -110,7 +112,7 @@ export default function ContactPage() {
 
             <div>
               <label htmlFor="message" className="block text-sm font-medium mb-1">
-                Message
+                {t('contact.form.message')}
               </label>
               <textarea
                 id="message"
@@ -120,7 +122,7 @@ export default function ContactPage() {
                 value={form.message}
                 onChange={handleChange}
                 className="w-full px-3 py-2 border border-primary/20 rounded-md bg-card dark:bg-card-dark focus:outline-none focus:ring-2 focus:ring-accent transition resize-none"
-                placeholder="Votre message..."
+                placeholder={locale === 'fr' ? 'Votre message...' : 'Your message...'}
               />
             </div>
 
@@ -131,7 +133,7 @@ export default function ContactPage() {
               className="w-full bg-accent text-secondary px-4 py-2 rounded-md shadow hover:bg-accent/90 transition-colors flex items-center justify-center gap-2"
             >
               <Send size={18} />
-              Envoyer
+              {t('contact.form.send')}
             </motion.button>
 
             {status && (
@@ -140,7 +142,15 @@ export default function ContactPage() {
                 animate={{ opacity: 1, y: 0 }}
                 className="text-sm text-green-600 dark:text-green-400 text-center"
               >
-                {status}
+                {status === 'sending'
+                  ? locale === 'fr'
+                    ? 'Envoi en cours...'
+                    : 'Sending...'
+                  : status === 'success'
+                  ? t('contact.form.success')
+                  : locale === 'fr'
+                  ? 'Une erreur est survenue. Merci de réessayer.'
+                  : 'An error occurred. Please try again.'}
               </motion.p>
             )}
           </form>
@@ -156,7 +166,7 @@ export default function ContactPage() {
         >
           <div>
             <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2">
-              <Mail className="text-accent" /> Restons en contact
+              <Mail className="text-accent" /> {t('contact.info.title')}
             </h2>
             <div className="space-y-4">
               <a
@@ -200,7 +210,7 @@ export default function ContactPage() {
             className="p-4 bg-accent/5 rounded-lg border border-accent/20"
           >
             <p className="text-sm text-text dark:text-text-dark">
-              <strong className="text-accent">Disponibilité :</strong> ouvert aux stages, missions freelance et collaborations.
+              {t('contact.availability')}
             </p>
           </motion.div>
         </motion.section>
