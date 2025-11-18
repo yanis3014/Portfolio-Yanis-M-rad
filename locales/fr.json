@@ -149,6 +149,11 @@
       "details": "L'application intègre trois interfaces distinctes : une interface admin pour gérer les utilisateurs et ajouter les événements au calendrier, une interface participant pour s'inscrire et effectuer les paiements, et une interface conférencier pour consulter les statistiques de présence et gérer leurs sessions.",
       "conclusion": "Cette solution complète a facilité l'organisation du forum en automatisant la gestion des inscriptions, des paiements et en fournissant des outils de suivi en temps réel pour tous les acteurs de l'événement."
     },
+    "nonogram": {
+      "description": "Projet de stage au laboratoire I3S consacré aux Nonogrammes et à la programmation par contraintes. L'objectif était de concevoir une chaîne complète allant de la génération automatique de grilles jusqu'à leur résolution avec Choco-Solver.",
+      "details": "J'ai développé un générateur de grilles aléatoires et à partir d'images, modélisé le problème sous forme de contraintes, puis implémenté deux modèles de solveur (Regular et Ternaire). Le projet inclut également des outils pour analyser l'impact de la taille, de la densité et de la structure des grilles sur les performances.",
+      "conclusion": "Ce projet m'a permis d'explorer concrètement la programmation par contraintes, de manipuler de nombreux résultats expérimentaux et de mieux comprendre le comportement algorithmique des solveurs sur des puzzles complexes."
+    },
     "dinary": {
       "description": "Application de paiement mobile révolutionnaire développée pour le marché algérien. Dinary propose une solution complète de paiement par QR code avec une architecture sophistiquée comprenant trois interfaces distinctes : Client, Commerçant et Administrateur.",
       "details": "L'application intègre un backend robuste entièrement développé avec des fonctionnalités avancées : système d'authentification sécurisé, géolocalisation des commerçants sur carte interactive, système de parrainage, programme de récompenses multi-niveaux, et gestion des transactions en temps réel. L'interface administrateur offre un contrôle total avec des outils de vérification d'identité, modération des commerçants, et analytics détaillées.",

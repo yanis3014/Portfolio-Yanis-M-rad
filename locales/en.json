@@ -149,6 +149,11 @@
       "details": "The application integrates three distinct interfaces: an admin interface to manage users and add events to the calendar, a participant interface to register and make payments, and a speaker interface to view attendance statistics and manage their sessions.",
       "conclusion": "This comprehensive solution facilitated forum organization by automating registration and payment management while providing real-time tracking tools for all event stakeholders."
     },
+    "nonogram": {
+      "description": "Internship project at the I3S laboratory focused on Nonograms and constraint programming. The goal was to design a complete pipeline from automatic grid generation to solving with Choco-Solver.",
+      "details": "I developed a grid generator (both random and image-based), modeled the problem as constraints, and implemented two solver models (Regular and Ternary). The project also includes tools to analyse how grid size, density and structure impact performance.",
+      "conclusion": "This project allowed me to explore constraint programming in practice, handle many experimental results and better understand the algorithmic behaviour of solvers on complex puzzles."
+    },
     "dinary": {
       "description": "Revolutionary mobile payment application developed for the Algerian market. Dinary offers a complete QR code payment solution with sophisticated architecture featuring three distinct interfaces: Client, Merchant, and Administrator.",
       "details": "The application integrates a robust backend entirely developed with advanced features: secure authentication system, merchant geolocation on interactive map, referral system, multi-level rewards program, and real-time transaction management. The admin interface provides total control with identity verification tools, merchant moderation, and detailed analytics.",

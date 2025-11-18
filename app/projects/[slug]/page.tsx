@@ -321,6 +321,12 @@ export default function ProjectPage({ params }: ProjectPageProps) {
               <p className="text-text dark:text-text-dark mb-4">{t('project.forum.details')}</p>
               <p className="text-text dark:text-text-dark">{t('project.forum.conclusion')}</p>
             </>
+          ) : params.slug === 'nonogram-constraint-solver' ? (
+            <>
+              <p className="text-text dark:text-text-dark mb-4">{t('project.nonogram.description')}</p>
+              <p className="text-text dark:text-text-dark mb-4">{t('project.nonogram.details')}</p>
+              <p className="text-text dark:text-text-dark">{t('project.nonogram.conclusion')}</p>
+            </>
           ) : params.slug === 'dinary-payment-app' ? (
             <>
               <p className="text-text dark:text-text-dark mb-4">{t('project.dinary.description')}</p>
