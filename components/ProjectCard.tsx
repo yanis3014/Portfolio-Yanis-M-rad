@@ -9,6 +9,7 @@ import { useLocale } from '@/contexts/LocaleContext';
 
 interface Project {
   title: string;
+  title_en?: string;
   description: string;
   description_en?: string;
   technologies: string[];
@@ -40,6 +41,7 @@ export default function ProjectCard({ project }: { project: Project }): JSX.Elem
     };
   }, []);
 
+  const title = locale === 'fr' || !project.title_en ? project.title : project.title_en;
   const description = locale === 'fr' || !project.description_en ? project.description : project.description_en;
 
   return (
@@ -70,8 +72,8 @@ export default function ProjectCard({ project }: { project: Project }): JSX.Elem
       </div>
       
       <div className="p-5 flex flex-col flex-1">
-        <h3 className="text-lg font-semibold mb-2 text-text dark:text-text-dark group-hover:text-accent transition-colors">
-          {project.title}
+        <h3 className="text-lg font-semibold text-text dark:text-text-dark group-hover:text-primary transition-colors">
+          {title}
         </h3>
         <p className="flex-1 text-sm text-text/70 dark:text-text-dark/70 mb-4 line-clamp-3">
           {description}

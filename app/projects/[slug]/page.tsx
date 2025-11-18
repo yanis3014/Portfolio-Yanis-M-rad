@@ -17,6 +17,7 @@ interface ImageSection {
 
 interface Project {
   title: string;
+  title_en?: string;
   description: string;
   description_en?: string;
   technologies: string[];
@@ -41,6 +42,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
 
   if (!project) notFound();
 
+  const title = locale === 'fr' || !project.title_en ? project.title : project.title_en;
   const description = locale === 'fr' || !project.description_en ? project.description : project.description_en;
 
   const gallery = project.gallery?.length
@@ -76,7 +78,9 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         transition={{ duration: 0.8, delay: 0.2 }}
         className="mb-12"
       >
-        <h1 className="text-4xl md:text-5xl font-bold mb-4 text-text dark:text-text-dark">{project.title}</h1>
+        <h1 className="text-3xl md:text-4xl font-bold mb-2 text-text dark:text-text-dark">
+          {title}
+        </h1>
         <p className="text-lg text-text/70 dark:text-text-dark/70 mb-6">{description}</p>
 
         <div className="flex flex-wrap gap-2 mb-8">

@@ -2,6 +2,7 @@
   {
     "slug": "pharmathon-monastir",
     "title": "Pharmathon — Plateforme d'inscription",
+    "title_en": "Pharmathon — Registration Platform",
     "description": "Site d'inscription développé pour les 50 ans de la Faculté de Pharmacie de Monastir. Gestion des inscriptions marathon et marchaton avec interface admin complète.",
     "description_en": "Registration site developed for the 50th anniversary of the Faculty of Pharmacy of Monastir. Manages marathon and walkathon registrations with a complete admin interface.",
     "technologies": ["Next.js", "TypeScript", "Tailwind"],
@@ -19,6 +20,7 @@
   {
     "slug": "forum-recherche-monastir",
     "title": "Forum de la Recherche — Plateforme événementielle",
+    "title_en": "Research Forum — Event Platform",
     "description": "Plateforme complète pour le Forum de la Recherche de la Faculté de Pharmacie de Monastir. Gestion d'événements, inscriptions payantes et interfaces multi-rôles.",
     "description_en": "Complete event platform for the Research Forum of the Faculty of Pharmacy of Monastir. Handles events, paid registrations and multi-role interfaces.",
     "technologies": ["Next.js", "TypeScript", "Tailwind"],
@@ -37,6 +39,7 @@
   {
     "slug": "dinary-payment-app",
     "title": "Dinary — Application de Paiement Mobile",
+    "title_en": "Dinary — Mobile Payment App",
     "description": "Application de paiement mobile complète pour l'Algérie avec QR codes, géolocalisation des commerçants, système de récompenses et architecture multi-interfaces (Client, Commerçant, Admin).",
     "description_en": "Complete mobile payment application for Algeria with QR codes, merchant geolocation, rewards system and multi-interface architecture (Client, Merchant, Admin).",
     "technologies": ["React Native", "Node.js", "Express", "MongoDB", "Socket.io", "QR Code"],
