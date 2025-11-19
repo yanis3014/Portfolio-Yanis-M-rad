@@ -67,12 +67,19 @@ export default function HeroSection() {
             >
               {t('hero.cta.projects')}
             </Link>
-            <Link
-              href="/contact"
+            <button
+              onClick={() => {
+                const link = document.createElement('a');
+                link.href = '/documents/cv.pdf';
+                link.download = 'cv.pdf';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+              }}
               className="inline-block border border-secondary/40 px-6 py-3 rounded-md hover:border-accent hover:text-accent transition-colors text-secondary"
             >
-              {t('hero.cta.contact')}
-            </Link>
+              {t('hero.cta.downloadCv')}
+            </button>
           </div>
         </motion.div>
       </div>

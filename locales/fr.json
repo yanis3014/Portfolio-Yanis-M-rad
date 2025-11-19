@@ -11,7 +11,8 @@
     "description": "Actuellement en 2ᵉ année de prépa intégrée à Polytech Nice Sophia Antipolis, je développe mes compétences en informatique avec un focus sur la programmation, les algorithmes et l'innovation technologique.",
     "cta": {
       "projects": "Voir mes projets",
-      "contact": "Me contacter"
+      "contact": "Me contacter",
+      "downloadCv": "Télécharger mon CV"
     }
   },
   "skills": {
