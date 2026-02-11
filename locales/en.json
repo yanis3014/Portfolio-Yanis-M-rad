@@ -145,6 +145,16 @@
       "details": "The site integrates a user registration system with data validation, participant management and administration interface to retrieve all registered users' information. Particular attention was paid to user experience and data security.",
       "conclusion": "This platform efficiently centralized event registrations while providing organizers with a complete and intuitive management tool."
     },
+    "terrascape": {
+      "description": "Business website for a company that manages and maintains terraces for restaurants and bars.",
+      "details": "Development of a professional showcase highlighting the company's services, with a portfolio gallery and an optimized contact form.",
+      "conclusion": "A modern and effective online presence to increase the company's visibility on the French Riviera."
+    },
+    "grandcafe": {
+      "description": "Business website for a French restaurant chain located in Nice on the French Riviera.",
+      "details": "Design of an elegant interface highlighting the menu, atmosphere, and history of the restaurant. The site serves as a digital showcase to attract both local and tourist clientele.",
+      "conclusion": "A refined online presence that reflects the brand image of this Nice establishment."
+    },
     "forum": {
       "description": "Event platform developed for the Research Forum of the Faculty of Pharmacy of Monastir. The system enables complete management of scientific events with paid registrations and participant tracking.",
       "details": "The application integrates three distinct interfaces: an admin interface to manage users and add events to the calendar, a participant interface to register and make payments, and a speaker interface to view attendance statistics and manage their sessions.",

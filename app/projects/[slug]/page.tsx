@@ -313,7 +313,19 @@ export default function ProjectPage({ params }: ProjectPageProps) {
       >
         <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-text dark:text-text-dark">{t('project.about')}</h2>
         <div className="bg-card dark:bg-card-dark p-6 rounded-lg border border-primary/20">
-          {params.slug === 'pharmathon-monastir' ? (
+          {params.slug === 'terrascape-azur' ? (
+            <>
+              <p className="text-text dark:text-text-dark mb-4">{t('project.terrascape.description')}</p>
+              <p className="text-text dark:text-text-dark mb-4">{t('project.terrascape.details')}</p>
+              <p className="text-text dark:text-text-dark">{t('project.terrascape.conclusion')}</p>
+            </>
+          ) : params.slug === 'grand-cafe-de-france' ? (
+            <>
+              <p className="text-text dark:text-text-dark mb-4">{t('project.grandcafe.description')}</p>
+              <p className="text-text dark:text-text-dark mb-4">{t('project.grandcafe.details')}</p>
+              <p className="text-text dark:text-text-dark">{t('project.grandcafe.conclusion')}</p>
+            </>
+           ) : params.slug === 'pharmathon-monastir' ? (
             <>
               <p className="text-text dark:text-text-dark mb-4">{t('project.pharmathon.description')}</p>
               <p className="text-text dark:text-text-dark mb-4">{t('project.pharmathon.details')}</p>

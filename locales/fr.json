@@ -145,6 +145,16 @@
       "details": "Le site intègre un système d'inscription utilisateur avec validation des données, gestion des participants et interface d'administration pour récupérer toutes les informations des inscrits. Une attention particulière a été portée à l'expérience utilisateur et à la sécurité des données.",
       "conclusion": "Cette plateforme a permis de centraliser efficacement les inscriptions pour l'événement tout en offrant aux organisateurs un outil de gestion complet et intuitif."
     },
+    "terrascape": {
+      "description": "Site Web pour une entreprise de gestion et entretien des Terasses de restaurants et bars.",
+      "details": "Développement d'une vitrine professionnelle mettant en avant les services de l'entreprise, avec une galerie de réalisations et un formulaire de contact optimisé.",
+      "conclusion": "Une présence en ligne moderne et efficace pour accroître la visibilité de l'entreprise sur la Côte d'Azur."
+    },
+    "grandcafe": {
+      "description": "Site Web pour une chaîne de restaurants français située à Nice sur la Côte d'Azur.",
+      "details": "Conception d'une interface élégante mettant en valeur la carte, l'ambiance et l'histoire du restaurant. Le site sert de vitrine numérique pour attirer une clientèle locale et touristique.",
+      "conclusion": "Une présence en ligne raffinée qui reflète l'image de marque de cet établissement niçois."
+    },
     "forum": {
       "description": "Plateforme événementielle développée pour le Forum de la Recherche de la Faculté de Pharmacie de Monastir. Le système permet la gestion complète d'événements scientifiques avec inscriptions payantes et suivi des participants.",
       "details": "L'application intègre trois interfaces distinctes : une interface admin pour gérer les utilisateurs et ajouter les événements au calendrier, une interface participant pour s'inscrire et effectuer les paiements, et une interface conférencier pour consulter les statistiques de présence et gérer leurs sessions.",

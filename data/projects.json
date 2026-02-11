@@ -1,5 +1,46 @@
 [
   {
+    "slug": "terrascape-azur",
+    "title": "Terrascape - Business Website",
+    "title_en": "Terrascape - Business Website",
+    "description": "Site Web pour une entreprise de gestion et entretien des Terasses de restaurants et bars ",
+    "description_en": "Business website for a company that manages and maintains terraces for restaurants and bars.",
+    "technologies": ["Next.js", "TypeScript", "Tailwind"],
+    "image": "/images/website4/first.png",
+    "images": [
+      "/images/website4/first.png",
+      "/images/website4/second.png",
+      "/images/website4/third.png",
+      "/images/website4/fourth.png",
+      "/images/website4/fifth.png",
+      "/images/website4/sixth.png"
+    ],
+    "github": "https://github.com/yanis3014/Terrascape-azur.git",
+    "demo": "https://terrascape06.com/"
+    ,
+    "category": "web"
+  },
+  {
+    "slug": "grand-cafe-de-france",
+    "title": "Grand-Cafe-De-France - Restaurant Website",
+    "title_en": "Grand-Cafe-De-France - Restaurant Website",
+    "description": "Site Web pour une chaine de restaurant français situe a Nice",
+    "description_en": "Business website for a chain of French restaurants located in Nice.",
+    "technologies": ["Next.js", "TypeScript", "Tailwind"],
+    "image": "/images/website5/first.png",
+    "images": [
+      "/images/website5/first.png",
+      "/images/website5/second.png",
+      "/images/website5/third.png",
+      "/images/website5/fourth.png",
+      "/images/website5/fifth.png"
+    ],
+    "github": "https://github.com/yanis3014/GrandCafeDeFrance.git",
+    "demo": "https://grand-cafe-de-france.vercel.app/"
+    ,
+    "category": "web"
+  },
+  {
     "slug": "pharmathon-monastir",
     "title": "Pharmathon — Plateforme d'inscription",
     "title_en": "Pharmathon — Registration Platform",
